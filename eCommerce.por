@@ -12,9 +12,11 @@ programa
 	inteiro quantidade
      caracter  continuarComprandoV
 	logico continuarCompra
+	logico perguntandoQuantidade
      
 	comprando='n'
 	continuarCompra=verdadeiro
+	perguntandoQuantidade = verdadeiro
 	//carrinho[0]=0
 	
 	
@@ -91,7 +93,8 @@ CASO NÃO: ATÉ BREVE!!!!
 	senao 
 	{
 		
-     faca { 
+     faca{ 
+     	para(inteiro updateCarrinho = 0; updateCarrinho < 2; updateCarrinho++){
      	limpa()
      	escreva("GENELETRON\n")
 		escreva("-----------------------------------------------\n")
@@ -127,16 +130,20 @@ CASO NÃO: ATÉ BREVE!!!!
 	}
 
 
-	
+	se(continuarCompra== verdadeiro){
+		
+
 	escreva("\nDigite o codigo do produto: ")
 	leia(codigo)
+	
+	
 
 	para(inteiro linha = 0; linha<10; linha++)
 	{
 		se(produtos[linha][0]== codigo) {
 			escreva(produtos[linha][0]+"\t"+ produtos[linha][1]+"\t"+produtos[linha][2]+produtos [linha][3])
-	//Perguntando a quantidade
-	logico perguntandoQuantidade=verdadeiro
+		}//Perguntando a quantidade
+
 	faca{ 
 		escreva("\nDigite a quantidade necessária: ")
 		leia(quantidade)
@@ -153,6 +160,8 @@ CASO NÃO: ATÉ BREVE!!!!
 	  
 		}
 	}    
+     	}
+		
 	     escreva("Gostaria de continuas comprando (s ou n) ")
 	     leia   (continuarComprandoV)
 	     se(continuarComprandoV=='n'ou continuarComprandoV=='N'){
@@ -189,9 +198,8 @@ CASO NÃO: ATÉ BREVE!!!!
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2658; 
+ * @POSICAO-CURSOR = 3095; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {produtos, 8, 8, 8}-{carrinho, 9, 9, 8};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
- * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
