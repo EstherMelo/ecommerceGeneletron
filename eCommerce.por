@@ -62,7 +62,7 @@ programa
 	produtos[9][2] = "449,00"
 	produtos[9][3] = "10"
 
-// 3) tela1_inicio
+// 3) mostrar tela1_inicio
 /*
 GENELETRON
 Gerando economia e qualidade pro seu dia a dia!
@@ -75,12 +75,23 @@ CASO NÃO: ATÉ BREVE!!!!
 	escreva("Gerando economia e qualidade pro seu dia a dia!\n\n")
 	escreva("DESEJA FAZER COMPRAS S/N: _\n")
 	leia (comprando) 
-	  se (comprando=='n')
-	  {
-	  	 escreva("CASO NÃO: ATÉ BREVE!!!!\n")
-	  }
+	se (comprando=='n')
+	{
+	  	escreva("CASO NÃO: ATÉ BREVE!!!!\n")
+	}
 	senao 
 	{
+	// 4) mostrar tela2_comprando
+	/*
+		- mostrar produtos
+		- carrinho
+		- perguntar código do produto 
+		- ..
+	*/
+
+
+
+	
 		
 	}
 		
@@ -92,7 +103,7 @@ CASO NÃO: ATÉ BREVE!!!!
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1778; 
+ * @POSICAO-CURSOR = 1885; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
