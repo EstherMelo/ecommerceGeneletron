@@ -10,8 +10,11 @@ programa
 	caracter comprando 
 	cadeia codigo
 	inteiro quantidade
-
+     caracter  continuarComprandoV
+	logico continuarCompra
+     
 	comprando='n'
+	continuarCompra=verdadeiro
 	//carrinho[0]=0
 	
 	
@@ -73,8 +76,7 @@ GENELETRON
 Gerando economia e qualidade pro seu dia a dia!
 DESEJA FAZER COMPRAS S/N: _
 CASO NÃO: ATÉ BREVE!!!!
-*/   logico continuarCompra=verdadeiro
-     faca {
+*/  
  	//colocar codigo invalido
  	
 	escreva("GENELETRON\n")
@@ -84,10 +86,19 @@ CASO NÃO: ATÉ BREVE!!!!
 	leia (comprando) 
 	se (comprando=='n')
 	{
-	  	escreva("CASO NÃO: ATÉ BREVE!!!!\n")
+	  	escreva("ATÉ BREVE!!!!\n")
 	}
 	senao 
 	{
+		
+     faca { 
+     	limpa()
+     	escreva("GENELETRON\n")
+		escreva("-----------------------------------------------\n")
+		escreva("Gerando economia e qualidade pro seu dia a dia!\n\n")
+     	escreva("COD	  PRODUTOS			  VALOR		 QUANT\n") 
+     	escreva("___________________________________________________________________\n")
+     	continuarCompra=verdadeiro
 	// 4) mostrar tela2_comprando
 	/*
 		- mostrar produtos
@@ -110,8 +121,8 @@ CASO NÃO: ATÉ BREVE!!!!
 	para (inteiro linha = 0; linha<10; linha++)
 	{
 		se(carrinho[linha]!=0) {
-			escreva(produtos[linha][0]+"\t"+ produtos[linha][1]+"\t"+produtos[linha][2]+carrinho[linha])
-			
+			escreva(produtos[linha][0]+"\t"+ produtos[linha][1]+"\t"+produtos[linha][2]+"\t"+carrinho[linha])
+			escreva("\n") 
 		}
 	}
 
@@ -141,7 +152,7 @@ CASO NÃO: ATÉ BREVE!!!!
 	 }   enquanto (perguntandoQuantidade==verdadeiro)
 	  
 		}
-	}    caracter  continuarComprandoV
+	}    
 	     escreva("Gostaria de continuas comprando (s ou n) ")
 	     leia   (continuarComprandoV)
 	     se(continuarComprandoV=='n'ou continuarComprandoV=='N'){
@@ -150,8 +161,8 @@ CASO NÃO: ATÉ BREVE!!!!
 	     //senao {
 	     	
 	     //}
-	} enquanto (continuarCompra==verdadeiro)
-	 
+	 }enquanto (continuarCompra==verdadeiro)
+	}
 			
 		
 		
@@ -168,7 +179,7 @@ CASO NÃO: ATÉ BREVE!!!!
 
 	
 		
-	}
+	
 		
 		
 	}
@@ -178,9 +189,9 @@ CASO NÃO: ATÉ BREVE!!!!
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3488; 
+ * @POSICAO-CURSOR = 2658; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
+ * @SIMBOLOS-INSPECIONADOS = {produtos, 8, 8, 8}-{carrinho, 9, 9, 8};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
