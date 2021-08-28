@@ -5,6 +5,10 @@ programa
 // 1) variáveis
 	cadeia produtos[10][4]
 	cadeia carrinho [10][4]
+	caracter comprando 
+
+	comprando='n'
+	
 	
 
 // 2) cadastrando os nossos produtos na matriz
@@ -66,8 +70,20 @@ DESEJA FAZER COMPRAS S/N: _
 CASO NÃO: ATÉ BREVE!!!!
 */
  
-
-
+	escreva("GENELETRON\n")
+	escreva ("-----------------------------------------------\n")
+	escreva("Gerando economia e qualidade pro seu dia a dia!\n\n")
+	escreva("DESEJA FAZER COMPRAS S/N: _\n")
+	leia (comprando) 
+	  se (comprando=='n')
+	  {
+	  	 escreva("CASO NÃO: ATÉ BREVE!!!!\n")
+	  }
+	senao 
+	{
+		
+	}
+		
 		
 	}
 }
@@ -76,7 +92,7 @@ CASO NÃO: ATÉ BREVE!!!!
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1432; 
+ * @POSICAO-CURSOR = 1778; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
