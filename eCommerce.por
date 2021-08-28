@@ -73,8 +73,10 @@ GENELETRON
 Gerando economia e qualidade pro seu dia a dia!
 DESEJA FAZER COMPRAS S/N: _
 CASO NÃO: ATÉ BREVE!!!!
-*/
+*/   logico continuarCompra=verdadeiro
+     faca {
  	//colocar codigo invalido
+ 	
 	escreva("GENELETRON\n")
 	escreva ("-----------------------------------------------\n")
 	escreva("Gerando economia e qualidade pro seu dia a dia!\n\n")
@@ -123,19 +125,34 @@ CASO NÃO: ATÉ BREVE!!!!
 		se(produtos[linha][0]== codigo) {
 			escreva(produtos[linha][0]+"\t"+ produtos[linha][1]+"\t"+produtos[linha][2]+produtos [linha][3])
 	//Perguntando a quantidade
-	escreva("\nDigite a quantidade necessária: ")
-	leia(quantidade)
-	inteiro quantEstoque = Tipos.cadeia_para_inteiro(produtos[linha][3],10)
-	se(quantEstoque>=quantidade){
-		carrinho[linha]=quantidade
-	}
-	senao{
-		escreva("Quantidade insuficiente no estoque!")
-	}
-
-		
+	logico perguntandoQuantidade=verdadeiro
+	faca{ 
+		escreva("\nDigite a quantidade necessária: ")
+		leia(quantidade)
+		inteiro quantEstoque = Tipos.cadeia_para_inteiro(produtos[linha][3],10)
+		se(quantEstoque>=quantidade){
+			carrinho[linha]=quantidade
+			perguntandoQuantidade=falso 
 		}
-	}
+		senao{
+			escreva("Quantidade insuficiente no estoque!")
+	     }
+     
+	 }   enquanto (perguntandoQuantidade==verdadeiro)
+	  
+		}
+	}    caracter  continuarComprandoV
+	     escreva("Gostaria de continuas comprando (s ou n) ")
+	     leia   (continuarComprandoV)
+	     se(continuarComprandoV=='n'ou continuarComprandoV=='N'){
+	     		continuarCompra=falso
+	     }
+	     //senao {
+	     	
+	     //}
+	} enquanto (continuarCompra==verdadeiro)
+	 
+			
 		
 		
 
@@ -161,7 +178,7 @@ CASO NÃO: ATÉ BREVE!!!!
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 952; 
+ * @POSICAO-CURSOR = 3488; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
