@@ -88,6 +88,17 @@ CASO NÃO: ATÉ BREVE!!!!
 		- perguntar código do produto 
 		- ..
 	*/
+	para(inteiro linha = 0; linha<10; linha++)
+	{
+		para(inteiro coluna = 0; coluna<4; coluna++)
+		{
+		escreva(produtos[linha][coluna]+ "  ")
+		
+		}
+		escreva("\n")
+	}
+	
+	
 
 
 
@@ -103,7 +114,7 @@ CASO NÃO: ATÉ BREVE!!!!
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1885; 
+ * @POSICAO-CURSOR = 2060; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
