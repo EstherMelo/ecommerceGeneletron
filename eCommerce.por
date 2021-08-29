@@ -5,31 +5,8 @@ programa
 	
 	funcao inicio()
 	{
-<<<<<<< HEAD
-// 1) variáveis
-	cadeia produtos[10][4]
-	inteiro carrinho[10]
-	caracter comprando 
-	cadeia codigo
-	inteiro quantidade
-     caracter  continuarComprandoV
-	logico continuarCompra
-	logico perguntandoQuantidade
-     
-	comprando='n'
-	continuarCompra=verdadeiro
-	perguntandoQuantidade = verdadeiro
-	//carrinho[0]=0
-	
-	
-
-// 2) cadastrando os nossos produtos na matriz
-	produtos[0][0] = "G1-1"
-	produtos[0][1] = "Notebook Acer Gamer   "
-	produtos[0][2] = "4.700,00"
-	produtos[0][3] = "10"
-=======
 	// 1) variáveis
+		cadeia nomeCliente
 		cadeia produtos[10][4]
 		inteiro carrinho[10]
 		caracter comprando 
@@ -52,7 +29,6 @@ programa
 		//carrinho[0]=0
 		
 		
->>>>>>> d71225bc5dfaadcd5a3637e64f9103659074f297
 	
 	// 2) cadastrando os nossos produtos na matriz
 		produtos[0][0] = "G1-1"
@@ -85,18 +61,6 @@ programa
 		produtos[5][2] = "100,90"
 		produtos[5][3] = "10"
 		
-<<<<<<< HEAD
-     faca{ 
-     	para(inteiro updateCarrinho = 0; updateCarrinho < 2; updateCarrinho++){
-     	limpa()
-     	escreva("GENELETRON\n")
-		escreva("-----------------------------------------------\n")
-		escreva("Gerando economia e qualidade pro seu dia a dia!\n\n")
-     	escreva("COD	  PRODUTOS			  VALOR		 QUANT\n") 
-     	escreva("___________________________________________________________________\n")
-     	continuarCompra=verdadeiro
-	// 4) mostrar tela2_comprando
-=======
 		produtos[6][0] = "G1-7"
 		produtos[6][1] = "Xbox Séries S         "
 		produtos[6][2] = "2.517,90"
@@ -118,7 +82,6 @@ programa
 		produtos[9][3] = "10"
 	
 	// 3) mostrar tela1_inicio
->>>>>>> d71225bc5dfaadcd5a3637e64f9103659074f297
 	/*
 	GENELETRON
 	Gerando economia e qualidade pro seu dia a dia!
@@ -195,50 +158,6 @@ programa
 						}//fecha o loop 
 					}enquanto(perguntandoCodigo==verdadeiro)
 
-<<<<<<< HEAD
-	se(continuarCompra== verdadeiro){
-		
-
-	escreva("\nDigite o codigo do produto: ")
-	leia(codigo)
-	
-	
-
-	para(inteiro linha = 0; linha<10; linha++)
-	{
-		se(produtos[linha][0]== codigo) {
-			escreva(produtos[linha][0]+"\t"+ produtos[linha][1]+"\t"+produtos[linha][2]+produtos [linha][3])
-		}//Perguntando a quantidade
-
-	faca{ 
-		escreva("\nDigite a quantidade necessária: ")
-		leia(quantidade)
-		inteiro quantEstoque = Tipos.cadeia_para_inteiro(produtos[linha][3],10)
-		se(quantEstoque>=quantidade){
-			carrinho[linha]=quantidade
-			perguntandoQuantidade=falso 
-		}
-		senao{
-			escreva("Quantidade insuficiente no estoque!")
-	     }
-     
-	 }   enquanto (perguntandoQuantidade==verdadeiro)
-	  
-		}
-	}    
-     	}
-		
-	     escreva("Gostaria de continuas comprando (s ou n) ")
-	     leia   (continuarComprandoV)
-	     se(continuarComprandoV=='n'ou continuarComprandoV=='N'){
-	     		continuarCompra=falso
-	     }
-	     //senao {
-	     	
-	     //}
-	 }enquanto (continuarCompra==verdadeiro)
-	}
-=======
 			// 8) Perguntando a quantidade						
 						faca{ 
 							escreva("\nDigite a quantidade necessária: ")
@@ -262,12 +181,12 @@ programa
 
 				updateCarrinho += 1
 		     }// f. updateCarrinho
->>>>>>> d71225bc5dfaadcd5a3637e64f9103659074f297
 			
 			// 9) Perguntar se ele continua ou não
 			escreva("Gostaria de continuar comprando (s ou n) ")
 			leia   (continuarComprandoV)
 			se(continuarComprandoV=='n'ou continuarComprandoV=='N'){
+				
 /////////////////////////////////////////////////////////////////////////
 // 10) mostrar carinho de compra, total e imposto, e escolher a forma de pagamento 
 
@@ -277,7 +196,20 @@ programa
 
 // 11) mostrar os parabens pela comprar, exibir a nota fiscal, e perguntar se ele quer continuar a compra( 
 
-
+		escreva("Nome do cliente: ")
+		leia(nomeCliente)
+		escreva("Parabens pela sua compra!!!!!!!\n\n")
+		escreva("\tResumo da sua compra!!!\n\n")
+		escreva(" \tGENELETRON               \n\n")  
+		escreva("\tFone: (11)5555-5678       \n")
+		escreva("\tRua: Avenida do Git, 73   \n")
+		escreva("\tCNPJ 90.876.123/6543.90   \n")
+		escreva("\t\n ")
+		
+		escreva("\tNome do cliente: ", nomeCliente, "\n")
+		escreva("\tValor:*                   \n")	
+		escreva("\tForma de pagamento:      ")
+		escreva("\n\n")
 
 
 
@@ -312,16 +244,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
-<<<<<<< HEAD
-<<<<<<< HEAD
- * @POSICAO-CURSOR = 3095; 
-=======
- * @POSICAO-CURSOR = 4390; 
->>>>>>> d71225bc5dfaadcd5a3637e64f9103659074f297
-=======
- * @POSICAO-CURSOR = 5752; 
->>>>>>> 571cafe5916f66f2f206e48302699209b25fc765
+ * @POSICAO-CURSOR = 191; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
+ * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
