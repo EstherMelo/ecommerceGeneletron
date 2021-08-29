@@ -164,7 +164,7 @@ programa
 							//validar caso não seja número
 							inteiro quantEstoque = Tipos.cadeia_para_inteiro(produtos[linhaDoCodigoInserido][3],10)
 							se(quantEstoque>=quantidade){
-								carrinho[linhaDoCodigoInserido]+=quantidade
+								carrinho[linhaDoCodigoInserido]+=quantidade // add qtd no carrinho
 								perguntandoQuantidade=falso
 
 								 //dando baixa no estoque 
@@ -187,8 +187,42 @@ programa
 			se(continuarComprandoV=='n'ou continuarComprandoV=='N'){
 /////////////////////////////////////////////////////////////////////////
 // 10) mostrar carinho de compra, total e imposto, e escolher a forma de pagamento 
+	inteiro formaDePagamento
+	real    totalDaCompra
+	real	   impostoDaCompra	
 
+	totalDaCompra = 0.0
+	impostoDaCompra = 0.0
+	limpa()
+	// 10.a) calcular total da compra
+	para (inteiro linha = 0; linha < 10; linha++)
+	{
+		se (carrinho[linha] != 0)
+		{
+			totalDaCompra += Tipos.cadeia_para_real(produtos[linha][3]) * carrinho[linha] 
+			// calcula a quantidade de cada produto vezes o preço
+		}
+	}
+	// 10.b) calcular importo
+	impostoDaCompra = (totalDaCompra * 0.09) / 100
 
+	// 10.c) mostrar os dois
+	escreva("Total da compra: " + totalDaCompra +"\n")
+	escreva("Imposto em cima da compra: " + impostoDaCompra+"\n\n")
+
+	// 10.d) exibir as formas e mostrar forma de pagamento
+	escreva ("Escolha a forma de pagamento: \n")
+	escreva ("OPÇÕES DE PAGAMENTO:\n") 
+	escreva ("1) Á VISTA COM 10% DESCONTO\n")
+	escreva ("2) NO CARTÃO COM ACRÉSCIMO DE 10%\n")
+	escreva ("3) É EM DUAS VEZES COM 15% TOTAL DE ACRESCIMO - TEM QUE MOSTRA O VALOR DE CADA PARCELA\n")
+	leia(formaDePagamento)
+
+	// 10.e) de acordo com a forma de pagamento, calcular o totalAPagar
+	// ...
+
+	inteiro teste
+	leia(teste)
 
 
 
@@ -229,7 +263,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 5752; 
+ * @POSICAO-CURSOR = 6632; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
