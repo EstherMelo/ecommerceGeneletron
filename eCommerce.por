@@ -1,6 +1,7 @@
 programa
 {
 	inclua biblioteca Tipos
+	inclua biblioteca Texto 
 	
 	funcao inicio()
 	{
@@ -39,10 +40,12 @@ programa
 	     logico perguntandoQuantidade
 	     inteiro linhaDoCodigoInserido
 	     inteiro updateCarrinho
+		logico perguntandoCodigo
 	     
 		comprando='n'
 		continuarCompra=verdadeiro
 		perguntandoQuantidade=verdadeiro
+		perguntandoCodigo=verdadeiro
 		codigo = ""
 		linhaDoCodigoInserido = 0
 		updateCarrinho = 0
@@ -129,12 +132,10 @@ programa
 		escreva("Gerando economia e qualidade pro seu dia a dia!\n\n")
 		escreva("DESEJA FAZER COMPRAS S/N: _\n")
 		leia (comprando) 
-		se (comprando=='n')
+		se (Texto.caixa_baixa(Tipos.caracter_para_cadeia(comprando))=="s")
 		{
-		  	escreva("ATÉ BREVE!!!!\n")
-		}
-		senao 
-		{		
+		  	
+		
 		     faca {
 			// atualiza a tela dps de inserir a quantidade
 			enquanto (updateCarrinho == 0 ou updateCarrinho == 1)
@@ -170,20 +171,29 @@ programa
 			// 6) Perguntando o código
 				se (updateCarrinho == 0)
 				{
-					escreva("\nDigite o codigo do produto: ")
-					leia(codigo)
-				
-					para(inteiro linha = 0; linha<10; linha++)
-					{
-						se(produtos[linha][0]== codigo) 
+					faca{
+						
+					
+						escreva("\nDigite o codigo do produto: ")
+						leia(codigo)
+					
+						para(inteiro linha = 0; linha<10; linha++)
 						{
-							// 7) Mostra os dados do produto, depois de inserir o código
-							escreva(produtos[linha][0]+"\t"+ produtos[linha][1]+"\t"+produtos[linha][2]+produtos [linha][3])
-							linhaDoCodigoInserido = linha
-							
-					  	}//fecha o se
-					}//fecha o loop 
-				 
+							se(produtos[linha][0]== Texto.caixa_alta(codigo))
+							{
+								// 7) Mostra os dados do produto, depois de inserir o código
+								escreva(produtos[linha][0]+"\t"+ produtos[linha][1]+"\t"+produtos[linha][2]+"\t"+produtos [linha][3])
+								linhaDoCodigoInserido = linha
+								perguntandoCodigo=falso
+								
+						  	}//fecha o se
+						  	senao se(Texto.caixa_alta(codigo) != "G1-1" e Texto.caixa_alta(codigo) != "G1-2" e Texto.caixa_alta(codigo) != "G1-3" e Texto.caixa_alta(codigo) != "G1-4" e Texto.caixa_alta(codigo) != "G1-5" e Texto.caixa_alta(codigo) != "G1-6" e Texto.caixa_alta(codigo) != "G1-7" e Texto.caixa_alta(codigo) != "G1-8" e Texto.caixa_alta(codigo) != "G1-9" e Texto.caixa_alta(codigo) != "G1-10" ) 
+						  	{
+						  		escreva("Opçao inválida")
+						  		pare
+						  	}
+						}//fecha o loop 
+					}enquanto(perguntandoCodigo==verdadeiro)
 
 <<<<<<< HEAD
 	se(continuarCompra== verdadeiro){
@@ -233,11 +243,15 @@ programa
 						faca{ 
 							escreva("\nDigite a quantidade necessária: ")
 							leia(quantidade)
+							//validar caso não seja número
 							inteiro quantEstoque = Tipos.cadeia_para_inteiro(produtos[linhaDoCodigoInserido][3],10)
 							se(quantEstoque>=quantidade){
-								carrinho[linhaDoCodigoInserido]=quantidade
+								carrinho[linhaDoCodigoInserido]+=quantidade
 								perguntandoQuantidade=falso
-								 
+
+								 //dando baixa no estoque 
+								 quantEstoque-=quantidade
+								 produtos[linhaDoCodigoInserido][3]=Tipos.inteiro_para_cadeia(quantEstoque,10)
 							}
 							senao{
 								escreva("Quantidade insuficiente no estoque!")
@@ -254,6 +268,20 @@ programa
 			escreva("Gostaria de continuar comprando (s ou n) ")
 			leia   (continuarComprandoV)
 			se(continuarComprandoV=='n'ou continuarComprandoV=='N'){
+/////////////////////////////////////////////////////////////////////////
+// 10) mostrar carinho de compra, total e imposto, e escolher a forma de pagamento 
+
+
+
+
+
+// 11) mostrar os parabens pela comprar, exibir a nota fiscal, e perguntar se ele quer continuar a compra( 
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
 				     //continuarCompra=falso
 			}
 			senao {
@@ -263,6 +291,14 @@ programa
 				     
 		}enquanto (continuarCompra==verdadeiro)
 	} // fim senao
+	senao se (Texto.caixa_baixa(Tipos.caracter_para_cadeia(comprando))=="n")
+	{
+		escreva("ATÉ BREVE!!!!\n")
+	}
+	senao
+	{
+		escreva("Opçao inválida")
+	}
 				
 	/*1)salvar esse produto na matriz carrinho
 	2)dar baixa na quantidade matriz produto (conversão de cadeia para real)
@@ -277,10 +313,14 @@ programa
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @POSICAO-CURSOR = 3095; 
 =======
  * @POSICAO-CURSOR = 4390; 
 >>>>>>> d71225bc5dfaadcd5a3637e64f9103659074f297
+=======
+ * @POSICAO-CURSOR = 5752; 
+>>>>>>> 571cafe5916f66f2f206e48302699209b25fc765
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
