@@ -256,11 +256,11 @@ programa
 							se (carrinho[linha] != 0)
 							{
 								real valorDoProduto = Tipos.cadeia_para_real(Texto.substituir(Texto.substituir(Texto.substituir(produtos[linha][2],".",""),",00",""),",","."))
-								totalDaCompra += valorDoProduto * carrinho[linha] 								
+								totalDaCompra = totalDaCompra + valorDoProduto * carrinho[linha]								
 								// calcula a quantidade de cada produto vezes o preço
 							}
 						}
-						// 10.b) calcular importo
+						// 10.b) calcular imposto
 						impostoDaCompra = totalDaCompra * 0.09
 					
 						faca{
@@ -282,7 +282,7 @@ programa
 							leia(formaDePagamento)
 						
 							// 10.e) de acordo com a forma de pagamento, calcular o totalAPagar
-							totalAPagar = totalDaCompra
+							totalAPagar = totalDaCompra + impostoDaCompra
 							
 							se (formaDePagamento == 1)
 							{
@@ -379,7 +379,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 12132; 
+ * @POSICAO-CURSOR = 9514; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
