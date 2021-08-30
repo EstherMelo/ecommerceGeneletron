@@ -22,6 +22,7 @@ programa
 		logico perguntandoCodigo
 		inteiro resetarCompra
 		logico finalizarPrograma
+		logico quantidadeValidada = falso
 	     
 		comprando = 'n'
 		continuarCompra = verdadeiro
@@ -157,9 +158,8 @@ programa
 				// 6) Perguntando o código
 					se (updateCarrinho == 0)
 					{
+						quantidadeValidada = falso
 						faca{
-							
-						
 							escreva("\nDigite o codigo do produto: ")
 							leia(codigo)
 						
@@ -188,30 +188,39 @@ programa
 								cadeia validarQuantidade
 								leia(validarQuantidade)
 								logico validando = verdadeiro
-								logico quantidadeValidada = falso
+								
 								//faca {
-								//validar se somente numeros foram digitados
+								//validar se somente numeros foram digitados ---------------------------------
 								inteiro len = Texto.numero_caracteres(validarQuantidade)
-								para (inteiro c = 0; c < len ; c++){
+								
+								inteiro c = 0
+								inteiro caracterIncorreto = 0
+									enquanto(c < len e Texto.obter_caracter(validarQuantidade , c) != '0' e  Texto.obter_caracter(validarQuantidade , c) != '1' e  Texto.obter_caracter(validarQuantidade , c) != '2' e  Texto.obter_caracter(validarQuantidade , c) != '3' e  Texto.obter_caracter(validarQuantidade , c) != '4' e  Texto.obter_caracter(validarQuantidade , c) != '5' e  Texto.obter_caracter(validarQuantidade , c) != '6' e  Texto.obter_caracter(validarQuantidade , c) != '7' e  Texto.obter_caracter(validarQuantidade , c) != '8' e  Texto.obter_caracter(validarQuantidade , c) != '9' )
+									{
+										caracterIncorreto += 1
+										c++	
+										se (caracterIncorreto > 0)
+										{
+											escreva("Escreva somente números!\n")
+											quantidadeValidada = falso	
+											pare								
+										}
+									}														
 									
-									se (Texto.obter_caracter(validarQuantidade , c) != '0' e  Texto.obter_caracter(validarQuantidade , c) != '1' e  Texto.obter_caracter(validarQuantidade , c) != '2' e  Texto.obter_caracter(validarQuantidade , c) != '3' e  Texto.obter_caracter(validarQuantidade , c) != '4' e  Texto.obter_caracter(validarQuantidade , c) != '5' e  Texto.obter_caracter(validarQuantidade , c) != '6' e  Texto.obter_caracter(validarQuantidade , c) != '7' e  Texto.obter_caracter(validarQuantidade , c) != '8' e  Texto.obter_caracter(validarQuantidade , c) != '9' ){
-										quantidadeValidada = falso
-										escreva("Escreva somente números!\n")
-										pare	
-									}
-									senao {
-										quantidadeValidada = verdadeiro
-										validando = falso
-										pare
-									}
+							
+							
+							
+								se (caracterIncorreto == 0)
+								{
+									quantidadeValidada = verdadeiro
 								}
-								 
-								//}enquanto (validando == verdadeiro)
+							
+										
+								
+								
 								se (quantidadeValidada == verdadeiro)
 								{
-									quantidade = Tipos.cadeia_para_inteiro(validarQuantidade, 10)
-									
-									
+									quantidade = Tipos.cadeia_para_inteiro(validarQuantidade, 10)								
 									//validar caso não seja número
 									inteiro quantEstoque = Tipos.cadeia_para_inteiro(produtos[linhaDoCodigoInserido][3],10)
 									se(quantEstoque>=quantidade){
@@ -391,9 +400,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2654; 
+ * @POSICAO-CURSOR = 6517; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {updateCarrinho, 21, 14, 14}-{resetarCompra, 23, 10, 13};
+ * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
