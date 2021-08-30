@@ -100,7 +100,7 @@ programa
 		escreva("GENELETRON\n")
 		escreva ("-----------------------------------------------\n")
 		escreva("Gerando economia e qualidade pro seu dia a dia!\n\n")
-		escreva("DESEJA FAZER COMPRAS S/N: _\n")
+		escreva("DESEJA FAZER COMPRAS S/N: ")
 		leia (comprando) 
 		se (Texto.caixa_baixa(Tipos.caracter_para_cadeia(comprando))=="s")
 		{
@@ -275,11 +275,11 @@ programa
 							se (carrinho[linha] != 0)
 							{
 								real valorDoProduto = Tipos.cadeia_para_real(Texto.substituir(Texto.substituir(Texto.substituir(produtos[linha][2],".",""),",00",""),",","."))
-								totalDaCompra += valorDoProduto * carrinho[linha] 								
+								totalDaCompra = totalDaCompra + valorDoProduto * carrinho[linha]								
 								// calcula a quantidade de cada produto vezes o preço
 							}
 						}
-						// 10.b) calcular importo
+						// 10.b) calcular imposto
 						impostoDaCompra = totalDaCompra * 0.09
 					
 						faca
@@ -370,10 +370,14 @@ programa
 					
 				
 				}
-				senao {
+				senao se (continuarComprandoV == 's' ou continuarComprandoV == 'S') {
+						
 						updateCarrinho=0
 					     continuarCompra=verdadeiro
 					     resetarCompra += 1	
+				}
+				senao{
+					escreva("Por favor informe a opção correta!\n") 
 				}
 						     
 		}enquanto (continuarCompra==verdadeiro) // fim faça então master do programa
@@ -400,7 +404,11 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
+<<<<<<< HEAD
  * @POSICAO-CURSOR = 6517; 
+=======
+ * @POSICAO-CURSOR = 2475; 
+>>>>>>> 4630b747691ccf85bdce1d94edfc7d62b5a659a2
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
