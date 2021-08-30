@@ -21,11 +21,13 @@ programa
 	     inteiro updateCarrinho
 		logico perguntandoCodigo
 		inteiro resetarCompra
+		logico finalizarPrograma
 	     
-		comprando='n'
-		continuarCompra=verdadeiro
-		perguntandoQuantidade=verdadeiro
-		perguntandoCodigo=verdadeiro
+		comprando = 'n'
+		continuarCompra = verdadeiro
+		perguntandoQuantidade = verdadeiro
+		perguntandoCodigo = verdadeiro
+		finalizarPrograma = falso
 		codigo = ""
 		linhaDoCodigoInserido = 0
 		updateCarrinho = 0
@@ -106,7 +108,7 @@ programa
 		     faca 
 		     {
 				// zerar carrinho
-				se (resetarCompra == 3)
+				se (resetarCompra == 10)
 				{				
 					para (inteiro linha = 0; linha < 10; linha++)
 						carrinho[linha] = 0
@@ -115,6 +117,7 @@ programa
 					perguntandoQuantidade = verdadeiro
 					perguntandoCodigo = verdadeiro
 					resetarCompra = 0
+					finalizarPrograma = falso
 				}
 				
 	
@@ -204,26 +207,25 @@ programa
 								}
 								 
 								//}enquanto (validando == verdadeiro)
-								se (quantidadeValidada == verdadeiro){
-								quantidade = Tipos.cadeia_para_inteiro(validarQuantidade, 10)
-								
-								
-								//validar caso não seja número
-								inteiro quantEstoque = Tipos.cadeia_para_inteiro(produtos[linhaDoCodigoInserido][3],10)
-								se(quantEstoque>=quantidade){
-									carrinho[linhaDoCodigoInserido]+=quantidade // add qtd no carrinho
-									perguntandoQuantidade=falso
-	
-									 //dando baixa no estoque 
-									 quantEstoque-=quantidade
-									 produtos[linhaDoCodigoInserido][3]=Tipos.inteiro_para_cadeia(quantEstoque,10)
-								}
-								senao{
-									escreva("\nQuantidade insuficiente no estoque!")
-							     }
+								se (quantidadeValidada == verdadeiro)
+								{
+									quantidade = Tipos.cadeia_para_inteiro(validarQuantidade, 10)
+									
+									
+									//validar caso não seja número
+									inteiro quantEstoque = Tipos.cadeia_para_inteiro(produtos[linhaDoCodigoInserido][3],10)
+									se(quantEstoque>=quantidade){
+										carrinho[linhaDoCodigoInserido]+=quantidade // add qtd no carrinho
+										perguntandoQuantidade=falso		
+										 //dando baixa no estoque 
+										 quantEstoque-=quantidade
+										 produtos[linhaDoCodigoInserido][3]=Tipos.inteiro_para_cadeia(quantEstoque,10)
+									}
+									senao{
+										escreva("\nQuantidade insuficiente no estoque!")
+								     }
 							     }     
-						 	}enquanto (perguntandoQuantidade==verdadeiro)					 	
-					
+						 	}enquanto (perguntandoQuantidade==verdadeiro)				 	
 					}// f. se updateCarrinho==0
 	
 					updateCarrinho += 1
@@ -232,8 +234,16 @@ programa
 				// 9) Perguntar se ele continua ou não
 				escreva("Gostaria de continuar comprando (s ou n) ")
 				leia   (continuarComprandoV)
+				
 				se(continuarComprandoV == 'n' ou continuarComprandoV == 'N')
-				{					
+				{
+					se ((continuarComprandoV == 'n' ou continuarComprandoV == 'N') e finalizarPrograma == verdadeiro)
+					{
+						escreva ("ATÉ BREVE!!")
+						continuarCompra = falso
+						pare
+					}
+										
 					/////////////////////////////////////////////////////////////////////////
 					// 10) mostrar carinho de compra, total e imposto, e escolher a forma de pagamento 
 						inteiro formaDePagamento
@@ -263,7 +273,8 @@ programa
 						// 10.b) calcular importo
 						impostoDaCompra = totalDaCompra * 0.09
 					
-						faca{
+						faca
+						{
 							limpa()
 							escreva("GENELETRON\n")
 							escreva("-----------------------------------------------\n")
@@ -282,7 +293,7 @@ programa
 							leia(formaDePagamento)
 						
 							// 10.e) de acordo com a forma de pagamento, calcular o totalAPagar
-							totalAPagar = totalDaCompra
+							totalAPagar = totalDaCompra + impostoDaCompra
 							
 							se (formaDePagamento == 1)
 							{
@@ -343,10 +354,11 @@ programa
 							escreva("\n\tFone: (11)5555-5678       \n")
 							escreva("\tRua: Avenida do Git, 73   \n")
 							escreva("\tCNPJ 90.876.123/6543.90   \n")
-							escreva("\t\n\n")
+							escreva("\t\n\n")							
 					
 							resetarCompra += 1
-					//////////////////////////////////////////////////////////////////////////
+							finalizarPrograma = verdadeiro
+					
 				
 				}
 				senao {
@@ -379,9 +391,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 12132; 
+ * @POSICAO-CURSOR = 2654; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
+ * @SIMBOLOS-INSPECIONADOS = {updateCarrinho, 21, 14, 14}-{resetarCompra, 23, 10, 13};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
