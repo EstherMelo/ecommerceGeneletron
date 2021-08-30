@@ -182,7 +182,32 @@ programa
 				// 8) Perguntando a quantidade						
 							faca{ 
 								escreva("\nDigite a quantidade necessária: ")
-								leia(quantidade)
+								cadeia validarQuantidade
+								leia(validarQuantidade)
+								logico validando = verdadeiro
+								logico quantidadeValidada = falso
+								//faca {
+								//validar se somente numeros foram digitados
+								inteiro len = Texto.numero_caracteres(validarQuantidade)
+								para (inteiro c = 0; c < len ; c++){
+									
+									se (Texto.obter_caracter(validarQuantidade , c) != '0' e  Texto.obter_caracter(validarQuantidade , c) != '1' e  Texto.obter_caracter(validarQuantidade , c) != '2' e  Texto.obter_caracter(validarQuantidade , c) != '3' e  Texto.obter_caracter(validarQuantidade , c) != '4' e  Texto.obter_caracter(validarQuantidade , c) != '5' e  Texto.obter_caracter(validarQuantidade , c) != '6' e  Texto.obter_caracter(validarQuantidade , c) != '7' e  Texto.obter_caracter(validarQuantidade , c) != '8' e  Texto.obter_caracter(validarQuantidade , c) != '9' ){
+										quantidadeValidada = falso
+										escreva("Escreva somente números!\n")
+										pare	
+									}
+									senao {
+										quantidadeValidada = verdadeiro
+										validando = falso
+										pare
+									}
+								}
+								 
+								//}enquanto (validando == verdadeiro)
+								se (quantidadeValidada == verdadeiro){
+								quantidade = Tipos.cadeia_para_inteiro(validarQuantidade, 10)
+								
+								
 								//validar caso não seja número
 								inteiro quantEstoque = Tipos.cadeia_para_inteiro(produtos[linhaDoCodigoInserido][3],10)
 								se(quantEstoque>=quantidade){
@@ -194,7 +219,8 @@ programa
 									 produtos[linhaDoCodigoInserido][3]=Tipos.inteiro_para_cadeia(quantEstoque,10)
 								}
 								senao{
-									escreva("Quantidade insuficiente no estoque!")
+									escreva("\nQuantidade insuficiente no estoque!")
+							     }
 							     }     
 						 	}enquanto (perguntandoQuantidade==verdadeiro)					 	
 					
@@ -338,7 +364,7 @@ programa
 	}
 	senao
 	{
-		escreva("Opçao inválida")
+		escreva("Opção inválida")
 	}
 				
 	/*1)salvar esse produto na matriz carrinho
@@ -353,7 +379,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 5081; 
+ * @POSICAO-CURSOR = 12127; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
