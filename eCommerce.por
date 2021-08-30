@@ -106,7 +106,7 @@ programa
 		     faca 
 		     {
 				// zerar carrinho
-				se (resetarCompra == 2)
+				se (resetarCompra == 3)
 				{				
 					para (inteiro linha = 0; linha < 10; linha++)
 						carrinho[linha] = 0
@@ -232,7 +232,7 @@ programa
 				// 9) Perguntar se ele continua ou não
 				escreva("Gostaria de continuar comprando (s ou n) ")
 				leia   (continuarComprandoV)
-				se(continuarComprandoV=='n'ou continuarComprandoV=='N')
+				se(continuarComprandoV == 'n' ou continuarComprandoV == 'N')
 				{					
 					/////////////////////////////////////////////////////////////////////////
 					// 10) mostrar carinho de compra, total e imposto, e escolher a forma de pagamento 
@@ -379,7 +379,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 12127; 
+ * @POSICAO-CURSOR = 12132; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
