@@ -100,7 +100,7 @@ programa
 		escreva("GENELETRON\n")
 		escreva ("-----------------------------------------------\n")
 		escreva("Gerando economia e qualidade pro seu dia a dia!\n\n")
-		escreva("DESEJA FAZER COMPRAS S/N: _\n")
+		escreva("DESEJA FAZER COMPRAS (S ou N): ")
 		leia (comprando) 
 		se (Texto.caixa_baixa(Tipos.caracter_para_cadeia(comprando))=="s")
 		{
@@ -183,11 +183,12 @@ programa
 							  	}
 							}//fecha o loop 
 							escreva("\n")
+							
 						}enquanto(perguntandoCodigo==verdadeiro)
 	
 				// 8) Perguntando a quantidade						
 							faca{ 
-								escreva("\nDigite a quantidade necessária: ")
+								escreva("\nInforme a quantidade de produtos: ")
 								cadeia validarQuantidade
 								leia(validarQuantidade)
 								logico validando = verdadeiro
@@ -204,7 +205,7 @@ programa
 										c++	
 										se (caracterIncorreto > 0)
 										{
-											escreva("Escreva somente números!\n")
+											escreva("Escreva somente números de 1 a 10!\n")
 											quantidadeValidada = falso	
 											pare								
 										}
@@ -294,14 +295,14 @@ programa
 						
 							// 10.c) mostrar os dois
 							escreva("Total da compra: R$ " + totalDaCompra +"\n")
-							escreva("Valor do Imposto sobre Total da Compra (9% do Total): R$ " + mat.arredondar(impostoDaCompra, 2) + "\n\n")
+							escreva("Valor do Imposto sobre a Compra (9%): R$ " + mat.arredondar(impostoDaCompra, 2) + "\n\n")
 						
 							// 10.d) exibir as formas e mostrar forma de pagamento
 							escreva ("Escolha a forma de pagamento: \n")
 							escreva ("OPÇÕES DE PAGAMENTO:\n") 
-							escreva ("1) Á VISTA COM 10% DESCONTO\n")
-							escreva ("2) NO CARTÃO COM ACRÉSCIMO DE 10%\n")
-							escreva ("3) É EM DUAS VEZES COM 15% TOTAL DE ACRESCIMO - TEM QUE MOSTRA O VALOR DE CADA PARCELA\n")
+							escreva ("1) Á Vista Com 10% Desconto.\n")
+							escreva ("2) No cartão com 10% de acrescimo.\n")
+							escreva ("3) Em duas vezes com 15% de taxa.\n")
 							leia(formaDePagamento)
 						
 							// 10.e) de acordo com a forma de pagamento, calcular o totalAPagar
@@ -325,7 +326,7 @@ programa
 							}
 							senao
 							{
-								escreva ("Forma de pagamento inválida!")
+								escreva ("Essa não é uma forma de pagamento válida!")
 								escolhendoFormaDePagamento = verdadeiro
 							}
 						}enquanto(escolhendoFormaDePagamento == verdadeiro)
@@ -345,7 +346,8 @@ programa
 							escreva("GENELETRON\n")
 							escreva("-----------------------------------------------\n")
 							escreva("Gerando economia e qualidade pro seu dia a dia!\n\n")
-					
+							inteiro apresentarCarrinho
+							
 							
 							escreva("\nParabéns pela sua compra!!!!!!!\n\n")
 							escreva("\tResumo da sua compra!!!\n\n")
@@ -361,13 +363,15 @@ programa
 								escreva("\tPARCELA #1: R$ " + parcelasIguais + "\n")
 								escreva("\tPARCELA #2: R$ " + parcelasIguais + "\n")
 							}
-							escreva("\tImposto total (9%): R$ " + mat.arredondar(impostoDaCompra, 2) + "\n\n")
-					
-							escreva("\n\tFone: (11)5555-5678       \n")
+							escreva("\tImposto total (9%): R$ " + mat.arredondar(impostoDaCompra, 2))
+							
+							escreva("\n\t__________________________")
+							escreva("\n\tFone: (11)5555-5678     \n")
 							escreva("\tRua: Avenida do Git, 73   \n")
 							escreva("\tCNPJ 90.876.123/6543.90   \n")
+							escreva("\t__________________________")
 							escreva("\t\n\n")							
-					
+
 							resetarCompra += 1
 							finalizarPrograma = verdadeiro
 					
@@ -414,7 +418,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 12662; 
+ * @POSICAO-CURSOR = 12081; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
