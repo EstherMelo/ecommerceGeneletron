@@ -1,5 +1,6 @@
 programa
 {
+	// 0) bibiotecas
 	inclua biblioteca Tipos
 	inclua biblioteca Texto 
 	inclua biblioteca Matematica --> mat
@@ -33,11 +34,7 @@ programa
 		linhaDoCodigoInserido = 0
 		updateCarrinho = 0
 		resetarCompra = 0
-		//carrinho[0]=0
-		
-		
-	
-	// 2) cadastrando os nossos produtos na matriz
+	// 2) Nosso banco de dados | cadastrando os nossos produtos na matriz
 		produtos[0][0] = "G1-1"
 		produtos[0][1] = "Notebook Acer Gamer   "
 		produtos[0][2] = "4.700,00"
@@ -89,112 +86,111 @@ programa
 		produtos[9][3] = "10"
 	
 	// 3) mostrar tela1_inicio
-	/*
-	GENELETRON
-	Gerando economia e qualidade pro seu dia a dia!
-	DESEJA FAZER COMPRAS S/N: _
-	CASO NÃO: ATÉ BREVE!!!!
-	*/  
-	 	//colocar codigo invalido
-	 	
 		escreva("GENELETRON\n")
-		escreva ("-----------------------------------------------\n")
+		escreva ("-----------------------------------------------\n")	
 		escreva("Gerando economia e qualidade pro seu dia a dia!\n\n")
+
+		escreva();
+
+
+
+	
 		escreva("DESEJA FAZER COMPRAS (S ou N): ")
 		leia (comprando) 
 		se (Texto.caixa_baixa(Tipos.caracter_para_cadeia(comprando))=="s")
 		{
-		  	
-		
 		     faca 
 		     {
-				// zerar carrinho
+			// zerar carrinho
 				se (resetarCompra == 10)
 				{				
 					para (inteiro linha = 0; linha < 10; linha++)
+					{
 						carrinho[linha] = 0
-						
+					}						
 					updateCarrinho = 0
 					perguntandoQuantidade = verdadeiro
 					perguntandoCodigo = verdadeiro
 					resetarCompra = 0
 					finalizarPrograma = falso
-
-				
-					
-				}
-				
-	
-			     	
+				}				 	
 				// atualiza a tela dps de inserir a quantidade
 				enquanto (updateCarrinho == 0 ou updateCarrinho == 1)
-			     {		 
-			     
+			     { 
 			     	limpa()
 			     	escreva("GENELETRON\n")
 					escreva("-----------------------------------------------\n")
 					escreva("Gerando economia e qualidade pro seu dia a dia!\n\n")
 			     	escreva("COD	  PRODUTOS			  VALOR		 QUANT\n") 
-			     	escreva("___________________________________________________________________\n")
-			     	
+			     	escreva("___________________________________________________________________\n")			     	
 				// 4) mostrar tela2_comprando
 					para(inteiro linha = 0; linha<10; linha++)
 					{
 						para(inteiro coluna = 0; coluna<4; coluna++)
 						{
-						escreva(produtos[linha][coluna]+ "\t  ")
-						
-						}
-						escreva("\n")
+							se (Tipos.cadeia_para_inteiro(produtos[linha][3], 10) > 0)
+							{
+								escreva(produtos[linha][coluna]+ "\t  ")						
+								se (coluna == 3)
+									escreva("\n")
+							}
+							senao
+								pare								
+						}				
 					}
 				// 5) Mostrando nosso carrinho	
 					escreva("\nCarrinho de compras: \n")
 					para (inteiro linha = 0; linha<10; linha++)
 					{
-						se(carrinho[linha]!=0) {
-							//escreva(produtos[linha][0]+"\t"+ produtos[linha][1]+"\t"+produtos[linha][2]+"\t"+carrinho[linha])
+						se(carrinho[linha] > 0) 
+						{
 							escreva(produtos[linha][0]+"\t  "+ produtos[linha][1]+"\t  "+produtos[linha][2]+"\t  "+carrinho[linha])
 							escreva("\n") 
 						}
 					}
-				escreva("\n")
+					escreva("\n")
 				// 6) Perguntando o código
 					se (updateCarrinho == 0)
 					{
 						quantidadeValidada = falso
-						faca{
+						faca
+						{
 							escreva("\nDigite o codigo do produto: ")
 							leia(codigo)
 						
 							para(inteiro linha = 0; linha<10; linha++)
 							{
-								se(produtos[linha][0]== Texto.caixa_alta(codigo))
+								se(produtos[linha][0] == Texto.caixa_alta(codigo))
 								{
-									// 7) Mostra os dados do produto, depois de inserir o código
-									escreva(produtos[linha][0]+"\t  "+ produtos[linha][1]+"\t  "+produtos[linha][2]+"\t  "+produtos [linha][3])
-									linhaDoCodigoInserido = linha
-									perguntandoCodigo=falso
+									// 7.1) Verifica se a quantidade no estoque é zero
+										se (Tipos.cadeia_para_inteiro(produtos[linha][3], 10) == 0)
+										{
+											escreva("Produto Indisponível do Estoque!")
+											pare											
+										}
 									
+									// 7.2) Mostra os dados do produto, depois de inserir o código
+										escreva(produtos[linha][0]+"\t  "+ produtos[linha][1]+"\t  "+produtos[linha][2]+"\t  "+produtos [linha][3])
+										linhaDoCodigoInserido = linha
+										perguntandoCodigo=falso									
 							  	}//fecha o se
 							  	senao se(Texto.caixa_alta(codigo) != "G1-1" e Texto.caixa_alta(codigo) != "G1-2" e Texto.caixa_alta(codigo) != "G1-3" e Texto.caixa_alta(codigo) != "G1-4" e Texto.caixa_alta(codigo) != "G1-5" e Texto.caixa_alta(codigo) != "G1-6" e Texto.caixa_alta(codigo) != "G1-7" e Texto.caixa_alta(codigo) != "G1-8" e Texto.caixa_alta(codigo) != "G1-9" e Texto.caixa_alta(codigo) != "G1-10" ) 
 							  	{
-							  		escreva("Opçao inválida")
+							  		escreva("Código Inválido!")
 							  		pare
 							  	}
 							}//fecha o loop 
-							escreva("\n")
-							
-						}enquanto(perguntandoCodigo==verdadeiro)
-	
+							escreva("\n")							
+						}enquanto(perguntandoCodigo==verdadeiro)	
+						
 				// 8) Perguntando a quantidade						
 							faca{ 
 								escreva("\nInforme a quantidade de produtos: ")
 								cadeia validarQuantidade
 								leia(validarQuantidade)
-								logico validando = verdadeiro
+								logico validando = verdadeiro								
 								
-								//faca {
-								//validar se somente numeros foram digitados ---------------------------------
+								//validar se somente numeros foram digitados
 								inteiro len = Texto.numero_caracteres(validarQuantidade)
 								
 								inteiro c = 0
@@ -209,19 +205,11 @@ programa
 											quantidadeValidada = falso	
 											pare								
 										}
-									}														
-									
-							
-							
-							
+									}													
 								se (caracterIncorreto == 0)
 								{
 									quantidadeValidada = verdadeiro
 								}
-							
-										
-								
-								
 								se (quantidadeValidada == verdadeiro)
 								{
 									quantidade = Tipos.cadeia_para_inteiro(validarQuantidade, 10)								
@@ -256,8 +244,6 @@ programa
 						continuarCompra = falso
 						pare
 					}
-										
-					/////////////////////////////////////////////////////////////////////////
 					// 10) mostrar carinho de compra, total e imposto, e escolher a forma de pagamento 
 						inteiro formaDePagamento
 						real    totalDaCompra
@@ -337,8 +323,6 @@ programa
 							escreva("GENELETRON\n")
 							escreva("-----------------------------------------------\n")
 							escreva("Gerando economia e qualidade pro seu dia a dia!\n\n")
-							
-							
 							escreva("Nome do cliente: ")
 							leia(nomeCliente)
 					
@@ -418,7 +402,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 12081; 
+ * @POSICAO-CURSOR = 2342; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
