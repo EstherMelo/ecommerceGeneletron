@@ -306,7 +306,7 @@ public class principal {
 
                                     // 10.e) de acordo com a forma de pagamento, calcular o totalAPagar
                                     totalAPagar = totalDaCompra + impostoDaCompra;
-
+                                    
                                     if (formaDePagamento == 1)
                                     {
                                         totalAPagar -= totalAPagar * 0.10; // calculo do desconto
@@ -350,13 +350,13 @@ public class principal {
 	                            System.out.print("\tNome do cliente: "+ nomeCliente+ "\n");
 	                            String formasDePagamento[] = {"À VISTA","CARTÃO","PARCELADO EM 2x"};
 	                            System.out.print("\tForma de pagamento: " + formasDePagamento[formaDePagamento - 1] + "\n");    
-	                            System.out.print("\tValor total da compra: R$ " + totalAPagar + "\n");
+	                            System.out.printf("\tValor total da compra: R$ %.3f" ,totalAPagar , "\n");
 	                            if (formaDePagamento == 3){
 	                            System.out.print("\tPARCELA #1: R$ " + parcelasIguais + "\n");
 	                            System.out.print("\tPARCELA #2: R$ " + parcelasIguais + "\n");
 
 	                            }
-	                            System.out.printf("\tImposto total (9): R$ %.2f " ,impostoDaCompra);
+	                            System.out.printf("\ns\tImposto total : R$ %.3f " ,impostoDaCompra, "\n");
 	                            System.out.print("\n\t__________________________");
 	                            System.out.print("\n\tFone: (11)5555-5678     \n");
 	                            System.out.print("\tRua: Avenida do Git, 73   \n");
