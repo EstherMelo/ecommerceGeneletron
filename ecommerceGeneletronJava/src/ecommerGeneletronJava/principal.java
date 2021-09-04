@@ -299,25 +299,37 @@ public class principal {
 
                                 do {
                                     //limpa();
-                                    System.out.print("GENELETRON\n");
+                                    System.out.print("               GENELETRON\n");
                                     System.out.print("-----------------------------------------------\n");
                                     System.out.print("Gerando economia e qualidade pro seu dia a dia!\n\n");
 
                                     // 10.c) mostrar os dois
+<<<<<<< HEAD
                                     System.out.printf("Total da compra: R$  %.3f",totalDaCompra);
                                     System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f", impostoDaCompra,"\n\n");
 
+=======
+                                    System.out.print("Total da compra: R$ " + totalDaCompra +"\n");
+                                    System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f \n\n", impostoDaCompra);
+                                    System.out.print("-----------------------------------------------\n");
+>>>>>>> 69dcdb00ac9a83802770707daeea8515157525f5
                                     // 10.d) exibir as formas e mostrar forma de pagamento
-                                    System.out.print("Escolha a forma de pagamento: \n");
-                                    System.out.print("OPÇÕES DE PAGAMENTO:\n");
-                                    System.out.print("1) Á Vista Com 10% Desconto.\n");
-                                    System.out.print("2) No cartão com 10% de acrescimo.\n");
-                                    System.out.print("3) Em duas vezes com 15% de taxa.\n");
+                                    
+                                    System.out.print("   Escolha a forma de pagamento: \n");
+                                    System.out.print("-----------------------------------------------\n");
+                                    System.out.print("      OPÇÕES DE PAGAMENTO:\n");
+                                    System.out.print(" __________________________________\n");
+                                    System.out.print("|1) Á Vista Com 10% Desconto       |\n");
+                                    System.out.print("|__________________________________|\n");
+                                    System.out.print("|2) No cartão com 10% de acrescimo |\n");
+                                    System.out.print("|__________________________________|\n");
+                                    System.out.print("|3) Em duas vezes com 15% de taxa  |\n");
+                                    System.out.print("|__________________________________|\n");
                                     formaDePagamento = leia.nextInt();
 
                                     // 10.e) de acordo com a forma de pagamento, calcular o totalAPagar
                                     totalAPagar = totalDaCompra + impostoDaCompra;
-
+                                    
                                     if (formaDePagamento == 1)
                                     {
                                         totalAPagar -= totalAPagar * 0.10; // calculo do desconto
@@ -379,6 +391,7 @@ public class principal {
 	                            System.out.print("\n_____________________________________________________________________\n");                           
 	                            
 	                            String formasDePagamento[] = {"À VISTA","CARTÃO","PARCELADO EM 2x"};
+<<<<<<< HEAD
 	                           System.out.print("Forma de pagamento: " + formasDePagamento[formaDePagamento - 1] + "\n");                         
 	                           System.out.printf("\nImposto : . . . . . . . . . . . . . . . . . .  . . . . . . . R$ %.3f",impostoDaCompra,"\n");
 	                            System.out.printf("\nValor total da compra: . . . . . . . . . . . . . . . . . . . R$ %.3f",totalAPagar,"\n");
@@ -387,6 +400,22 @@ public class principal {
 	                            System.out.printf("\nPARCELA #2: R$ %.3f",parcelasIguais);
 	                            }	                            
 	                            System.out.print("\n======================================================================\n");		                            
+=======
+	                            System.out.print("\tForma de pagamento: " + formasDePagamento[formaDePagamento - 1] + "\n");    
+	                            System.out.printf("\tValor total da compra: R$ %.3f" ,totalAPagar , "\n");
+	                            if (formaDePagamento == 3){
+	                            System.out.print("\tPARCELA #1: R$ " + parcelasIguais + "\n");
+	                            System.out.print("\tPARCELA #2: R$ " + parcelasIguais + "\n");
+
+	                            }
+	                            System.out.printf("\ns\tImposto total : R$ %.3f " ,impostoDaCompra, "\n");
+	                            System.out.print("\n\t__________________________");
+	                            System.out.print("\n\tFone: (11)5555-5678     \n");
+	                            System.out.print("\tRua: Avenida do Git, 73   \n");
+	                            System.out.print("\tCNPJ 90.876.123/6543.90   \n");
+	                            System.out.print("\t__________________________");
+	                            System.out.print("\t\n\n");                        
+>>>>>>> 69dcdb00ac9a83802770707daeea8515157525f5
 	                            resetarCompra += 1;
 	                            finalizarPrograma = true;	                }
 	                else if(continuarComprandoV == 's' || continuarComprandoV == 'S')	                {
