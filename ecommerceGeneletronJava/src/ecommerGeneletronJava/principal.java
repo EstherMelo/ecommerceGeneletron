@@ -90,11 +90,22 @@ public class principal {
 				produtos[9][3] = "10";
 			
 			// 3) mostrar tela1_inicio
-				System.out.print("GENELETRON\n");
-				System.out.print("-----------------------------------------------\n")	;
-				System.out.print("Gerando economia e qualidade pro seu dia a dia!\n\n");
-
-				System.out.print("DESEJA FAZER COMPRAS (S ou N): ");
+				
+				
+				System.out.print("@@@@@@@@   @@@@@@@  @@   @  @@@@@@@  @@      @@@@@@@  @@@@@@@  @@@@@@@   @@@@@@   @@   @ \n");
+				System.out.print("@@         @@       @@@  @  @@       @@      @@          @     @@    @   @    @   @@@  @ \n");
+				System.out.print("@@ @@@@@   @@@@@@@  @@ @ @  @@@@@@@  @@      @@@@@@@     @     @@@@@@    @    @   @@ @ @ \n");
+				System.out.print("@@    @@   @@       @@  @@  @@       @@      @@          @     @@  @     @    @   @@  @@ \n");
+				System.out.print("@@@@@@@@   @@@@@@@  @@   @  @@@@@@@  @@@@@@  @@@@@@@     @     @@   @    @@@@@@   @@   @ \n");
+			
+				System.out.print("\n\n  Loja Geneletron - Gerando economia e qualidade pro seu dia a dia!\n");
+				System.out.print("##################################################################\n");
+				System.out.print("\t\t     DESEJA FAZER COMPRAS? \n\t\t\t     S/N: ");
+				
+				
+				
+				
+		
 				comprando = leia.next().charAt(0);
 				
 				if (Character.toString(comprando).toLowerCase().equals("s"))
