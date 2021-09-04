@@ -91,16 +91,18 @@ public class principal {
 			
 			// 3) mostrar tela1_inicio
 				
-				
-				System.out.print("@@@@@@@@   @@@@@@@  @@   @  @@@@@@@  @@      @@@@@@@  @@@@@@@  @@@@@@@   @@@@@@   @@   @ \n");
-				System.out.print("@@         @@       @@@  @  @@       @@      @@          @     @@    @   @    @   @@@  @ \n");
-				System.out.print("@@ @@@@@   @@@@@@@  @@ @ @  @@@@@@@  @@      @@@@@@@     @     @@@@@@    @    @   @@ @ @ \n");
-				System.out.print("@@    @@   @@       @@  @@  @@       @@      @@          @     @@  @     @    @   @@  @@ \n");
-				System.out.print("@@@@@@@@   @@@@@@@  @@   @  @@@@@@@  @@@@@@  @@@@@@@     @     @@   @    @@@@@@   @@   @ \n");
-			
-				System.out.print("\n\n  Loja Geneletron - Gerando economia e qualidade pro seu dia a dia!\n");
-				System.out.print("##################################################################\n");
-				System.out.print("\t\t     DESEJA FAZER COMPRAS? \n\t\t\t     S/N: ");
+				System.out.print("**********************************************************************************************\n");
+				System.out.print("* @@@@@@@@  @@@@@@@  @@   @@  @@@@@@@  @@      @@@@@@@  @@@@@@@@  @@@@@@@  @@@@@@@@  @@   @@ *\n");
+				System.out.print("* @@        @@       @@@  @@  @@       @@      @@          @@     @@    @  @@    @@  @@@  @@ *\n");
+				System.out.print("* @@  @@@@  @@@@@@   @@ @ @@  @@@@@@   @@      @@@@@@      @@     @@@@@@@  @@    @@  @@ @ @@ *\n");
+				System.out.print("* @@    @@  @@       @@  @@@  @@       @@      @@          @@     @@  @@   @@    @@  @@  @@@ *\n");
+				System.out.print("* @@@@@@@@  @@@@@@@  @@   @@  @@@@@@@  @@@@@@  @@@@@@@     @@     @@   @@  @@@@@@@@  @@   @@ *\n");
+				System.out.print("*                                                                                            *\n");
+				System.out.print("**********************************************************************************************\n");
+
+				System.out.print("\n             Loja Geneletron - Gerando economia e qualidade pro seu dia a dia!\n");
+				System.out.print("             #################################################################\n");
+				System.out.print("\t\t                      DESEJA FAZER COMPRAS? \n\t\t\t     S/N: ");
 				
 				
 				
