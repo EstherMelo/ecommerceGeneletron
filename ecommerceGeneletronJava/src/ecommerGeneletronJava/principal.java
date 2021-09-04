@@ -41,52 +41,52 @@ public class principal {
 			// 2) Nosso banco de dados | cadastrando os nossos produtos na matriz
 				produtos[0][0] = "G1-1";
 				produtos[0][1] = "Notebook Acer Gamer   ";
-				produtos[0][2] = "4.700,00";
+				produtos[0][2] = "4.700   ";
 				produtos[0][3] = "10";
 				
 				produtos[1][0] = "G1-2";
 				produtos[1][1] = "Smart TV LG 55´       ";
-				produtos[1][2] = "2.799,00";
+				produtos[1][2] = "2.799   ";
 				produtos[1][3] = "10";
 			
 				produtos[2][0] = "G1-3";
-				produtos[2][1] = "Fone de ouvido Edifier";
-				produtos[2][2] = "229,00";
+				produtos[2][1] = "Monitor 4k 32'        ";
+				produtos[2][2] = "2.500   ";
 				produtos[2][3] = "10";
 			
 				produtos[3][0] = "G1-4";
 				produtos[3][1] = "Smartphone Motorola   ";
-				produtos[3][2] = "1.799,00";
+				produtos[3][2] = "1.799   ";
 				produtos[3][3] = "10";
 			
 				produtos[4][0] = "G1-5";
-				produtos[4][1] = "Aspirador Robô de Pó  ";
-				produtos[4][2] = "382,90";
+				produtos[4][1] = "Cadeira gamer Thunderx3";
+				produtos[4][2] = "1.500   ";
 				produtos[4][3] = "10";
 			
 				produtos[5][0] = "G1-6";
-				produtos[5][1] = "Lâmpada Inteligente   ";
-				produtos[5][2] = "100,90";
+				produtos[5][1] = "Drone DGI              ";
+				produtos[5][2] = "5.300   ";
 				produtos[5][3] = "10";
 				
 				produtos[6][0] = "G1-7";
 				produtos[6][1] = "Xbox Séries S         ";
-				produtos[6][2] = "2.518,00";
+				produtos[6][2] = "2.518   ";
 				produtos[6][3] = "10";
 				
 				produtos[7][0] = "G1-8";
-				produtos[7][1] = "Roteador TP-Link      ";
-				produtos[7][2] = "279,00";
+				produtos[7][1] = "Apple watch series 3  ";
+				produtos[7][2] = "1.500   ";
 				produtos[7][3] = "10";
 				
 				produtos[8][0] = "G1-9";
 				produtos[8][1] = "Playstation 4         ";
-				produtos[8][2] = "2.799,00";
+				produtos[8][2] = "2.799   ";
 				produtos[8][3] = "10";
 				
 				produtos[9][0] = "G1-10";
-				produtos[9][1] = "Teclado gamer         ";
-				produtos[9][2] = "449,00";
+				produtos[9][1] = "Projetor 4k LG         ";
+				produtos[9][2] = "7.000   ";
 				produtos[9][3] = "10";
 			
 			// 3) mostrar tela1_inicio
@@ -304,8 +304,8 @@ public class principal {
                                     System.out.print("Gerando economia e qualidade pro seu dia a dia!\n\n");
 
                                     // 10.c) mostrar os dois
-                                    System.out.print("Total da compra: R$ " + totalDaCompra +"\n");
-                                    System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f \n\n", impostoDaCompra);
+                                    System.out.printf("Total da compra: R$  %.3f",totalDaCompra);
+                                    System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f", impostoDaCompra,"\n\n");
 
                                     // 10.d) exibir as formas e mostrar forma de pagamento
                                     System.out.print("Escolha a forma de pagamento: \n");
@@ -356,29 +356,40 @@ public class principal {
 	                            System.out.print("Gerando economia e qualidade pro seu dia a dia!\n\n");
 	                            int apresentarCarrinho;  
 
-	                            System.out.print("\nParabéns pela sua compra!!!!!!!\n\n");
-	                            System.out.print("\tResumo da sua compra!!!\n\n");
-	                            System.out.print("\tNome do cliente: "+ nomeCliente+ "\n");
+	                            System.out.print("\n\tParabéns pela sua compra " +nomeCliente+ "!!!!!\n\n");
+	                            //NOTA FISCAL
+	                            System.out.print("\nResumo da sua compra.\n");
+	                            System.out.print("_______________________________________________________________________\n");
+	                            System.out.print("\t\t+++ GENELETRON +++\n");
+	                            System.out.print("Avenida Paulista,908\t\tFone:(11)234-5678\n");
+	                            System.out.print("CNPJ 00.000.000/000.00\n");
+	                            System.out.print("=======================================================================\n");
+	                            System.out.print("Nome do cliente: " +nomeCliente+ "\n");
+	                            System.out.print("\nCOD.\t\tPRODUTO\t\t\tVL.TOTAL\t\tQTD.\n");
+	                            for (int linha = 0; linha<10; linha++)
+								{
+									if(carrinho[linha] > 0) 
+									{
+										System.out.print(produtos[linha][0]+"\t  "+ produtos[linha][1]+"\t  "+produtos[linha][2]+"\t  "+carrinho[linha]);
+										System.out.print("\n") ;
+									}
+								}
+	                           	                           
+	                            System.out.printf("\n\nTotal. . . . . . . . . . . . . . . . . . . . . . . . . . R$ %.3f",totalDaCompra);
+	                            System.out.print("\n_____________________________________________________________________\n");                           
+	                            
 	                            String formasDePagamento[] = {"À VISTA","CARTÃO","PARCELADO EM 2x"};
-	                            System.out.print("\tForma de pagamento: " + formasDePagamento[formaDePagamento - 1] + "\n");    
-	                            System.out.print("\tValor total da compra: R$ " + totalAPagar + "\n");
+	                           System.out.print("Forma de pagamento: " + formasDePagamento[formaDePagamento - 1] + "\n");                         
+	                           System.out.printf("\nImposto : . . . . . . . . . . . . . . . . . .  . . . . . . . R$ %.3f",impostoDaCompra,"\n");
+	                            System.out.printf("\nValor total da compra: . . . . . . . . . . . . . . . . . . . R$ %.3f",totalAPagar,"\n");
 	                            if (formaDePagamento == 3){
-	                            System.out.print("\tPARCELA #1: R$ " + parcelasIguais + "\n");
-	                            System.out.print("\tPARCELA #2: R$ " + parcelasIguais + "\n");
-
-	                            }
-	                            System.out.printf("\tImposto total (9): R$ %.2f " ,impostoDaCompra);
-	                            System.out.print("\n\t__________________________");
-	                            System.out.print("\n\tFone: (11)5555-5678     \n");
-	                            System.out.print("\tRua: Avenida do Git, 73   \n");
-	                            System.out.print("\tCNPJ 90.876.123/6543.90   \n");
-	                            System.out.print("\t__________________________");
-	                            System.out.print("\t\n\n");                        
+	                            System.out.printf("\nPARCELA #1: R$ %.3f",parcelasIguais);
+	                            System.out.printf("\nPARCELA #2: R$ %.3f",parcelasIguais);
+	                            }	                            
+	                            System.out.print("\n======================================================================\n");		                            
 	                            resetarCompra += 1;
-	                            finalizarPrograma = true;
-	                }
-	                else if(continuarComprandoV == 's' || continuarComprandoV == 'S')
-	                {
+	                            finalizarPrograma = true;	                }
+	                else if(continuarComprandoV == 's' || continuarComprandoV == 'S')	                {
 	                        updateCarrinho=0;
 	                         continuarCompra=true;
 	                         resetarCompra += 1;
