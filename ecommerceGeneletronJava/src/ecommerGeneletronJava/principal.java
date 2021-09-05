@@ -92,11 +92,11 @@ public class principal {
 			// 3) mostrar tela1_inicio
 				
 				System.out.print("**********************************************************************************************\n");
-				System.out.print("* @@@@@@@@  @@@@@@@  @@   @@  @@@@@@@  @@      @@@@@@@  @@@@@@@@  @@@@@@@  @@@@@@@@  @@   @@ *\n");
-				System.out.print("* @@        @@       @@@  @@  @@       @@      @@          @@     @@   @@  @@    @@  @@@  @@ *\n");
-				System.out.print("* @@  @@@@  @@@@@@   @@ @ @@  @@@@@@   @@      @@@@@@      @@     @@@@@@@  @@    @@  @@ @ @@ *\n");
-				System.out.print("* @@    @@  @@       @@  @@@  @@       @@      @@          @@     @@  @@   @@    @@  @@  @@@ *\n");
-				System.out.print("* @@@@@@@@  @@@@@@@  @@   @@  @@@@@@@  @@@@@@  @@@@@@@     @@     @@   @@  @@@@@@@@  @@   @@ *\n");
+				System.out.print("* 00000000  0000000  00   00  0000000  00      0000000  00000000  0000000  00000000  00   00 *\n");
+				System.out.print("* 00        00       000  00  00       00      00          00     00   00  00    00  000  00 *\n");
+				System.out.print("* 00  0000  000000   00 0 00  000000   00      000000      00     0000000  00    00  00 0 00 *\n");
+				System.out.print("* 00    00  00       00  000  00       00      00          00     00  00   00    00  00  000 *\n");
+				System.out.print("* 00000000  0000000  00   00  0000000  000000  0000000     00     00   00  00000000  00   00 *\n");
 				System.out.print("*                                                                                            *\n");
 				System.out.print("**********************************************************************************************\n");
 
@@ -256,128 +256,131 @@ public class principal {
 						}// f. updateCarrinho
 				
 
-// 9) Perguntar se ele continua ou não
+		//9) Perguntar se ele continua ou não
 					System.out.print("Gostaria de continuar comprando (s ou n) ");
 					continuarComprandoV = leia.next().charAt(0);
 
-                        if(continuarComprandoV == 'n' || continuarComprandoV == 'N')
-                        {
-                            if ((continuarComprandoV == 'n' || continuarComprandoV == 'N') && finalizarPrograma == true)
-                            {
-                                System.out.print("ATÉ BREVE!!");
-                                continuarCompra = false;
-                                break;
-                            }
-                            // 10) mostrar carinho de compra, total e imposto, e escolher a forma de pagamento 
-                                int formaDePagamento;
-                                double    totalDaCompra;
-                                double   impostoDaCompra;    
-                                double       totalAPagar;
-                                double   parcelasIguais;
-                                Boolean escolhendoFormaDePagamento;
+		                if(continuarComprandoV == 'n' || continuarComprandoV == 'N')
+		                {
+		                    if ((continuarComprandoV == 'n' || continuarComprandoV == 'N') && finalizarPrograma == true)
+		                    {
+		                        System.out.print("ATÉ BREVE!!");
+		                        continuarCompra = false;
+		                        break;
+		                    }
+		                    // 10) mostrar carinho de compra, total e imposto, e escolher a forma de pagamento 
+		                        int formaDePagamento;
+		                        double    totalDaCompra;
+		                        double   impostoDaCompra;    
+		                        double       totalAPagar;
+		                        double   parcelasIguais;
+		                        Boolean escolhendoFormaDePagamento;
 
-                                totalDaCompra = 0.0;
-                                impostoDaCompra = 0.0;
-                                totalAPagar = 0.0;
-                                escolhendoFormaDePagamento = true;
-                                parcelasIguais = 0.0;
-                                formaDePagamento = 0;
+		                        totalDaCompra = 0.0;
+		                        impostoDaCompra = 0.0;
+		                        totalAPagar = 0.0;
+		                        escolhendoFormaDePagamento = true;
+		                        parcelasIguais = 0.0;
+		                        formaDePagamento = 0;
 
-                                limpa();
-                                // 10.a) calcular total da compra
-                                for(int linha = 0; linha < 10; linha++)
-                                {
-                                    if(carrinho[linha] != 0)
-                                    {
-                                        double valorDoProduto = Double.parseDouble(produtos[linha][2].replaceAll(",00","").replaceAll(",","."));
-                                        //System.out.println(valorDoProduto);
-                                        totalDaCompra += valorDoProduto * carrinho[linha];                                 
-                                        // calcula a quantidade de cada produto vezes o preço
-                                        // .replaceAll(".","").replaceAll(",00","").replaceAll(",",".")
-                                    }
-                                }
-                                // 10.b) calcular importo
-                                impostoDaCompra = totalDaCompra * 0.09;
+		                        limpa();
+		                        // 10.a) calcular total da compra
+		                        for(int linha = 0; linha < 10; linha++)
+		                        {
+		                            if(carrinho[linha] != 0)
+		                            {
+		                                double valorDoProduto = Double.parseDouble(produtos[linha][2].replaceAll(",00","").replaceAll(",","."));
+		                                //System.out.println(valorDoProduto);
+		                                totalDaCompra += valorDoProduto * carrinho[linha];                                 
+		                                // calcula a quantidade de cada produto vezes o preço
+		                                // .replaceAll(".","").replaceAll(",00","").replaceAll(",",".")
+		                            }
+		                        }
+		                        // 10.b) calcular importo
+		                        impostoDaCompra = totalDaCompra * 0.09;
 
-                                do {
-                                    //limpa();
-                                    System.out.print("GENELETRON\n");
-                                    System.out.print("-----------------------------------------------\n");
-                                    System.out.print("Gerando economia e qualidade pro seu dia a dia!\n\n");
+		                        do {
+		                            //limpa();
+		                            System.out.print("               GENELETRON\n");
+		                            System.out.print("-----------------------------------------------\n");
+		                            System.out.print("Gerando economia e qualidade pro seu dia a dia!\n\n");
 
-                                    // 10.c) mostrar os dois
+		                            // 10.c) mostrar os dois
 
-                                    System.out.printf("Total da compra: R$  %.3f",totalDaCompra);
-                                    System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f", impostoDaCompra,"\n\n");
+		                            System.out.printf("Total da compra: R$  %.3f",totalDaCompra);
+		                            System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f", impostoDaCompra,"\n\n");
 
 
-                                    System.out.print("Total da compra: R$ " + totalDaCompra +"\n");
-                                    System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f \n\n", impostoDaCompra);
-<<<<<<< HEAD
-=======
-                                    System.out.print("-----------------------------------------------\n");
->>>>>>> 2dc56b185f8301fc91f37c4ebe007b7345793b0d
+		                            System.out.print("Total da compra: R$ " + totalDaCompra +"\n");
+		                            System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f \n\n", impostoDaCompra);
+		                            System.out.print("-----------------------------------------------\n");
 
-                                    // 10.d) exibir as formas e mostrar forma de pagamento
-                                    System.out.print("Escolha a forma de pagamento: \n");
-                                    System.out.print("OPÇÕES DE PAGAMENTO:\n");
-                                    System.out.print("1) Á Vista Com 10% Desconto.\n");
-                                    System.out.print("2) No cartão com 10% de acrescimo.\n");
-                                    System.out.print("3) Em duas vezes com 15% de taxa.\n");
-                                    formaDePagamento = leia.nextInt();
+		                            // 10.d) exibir as formas e mostrar forma de pagamento
+		                            
+		                            System.out.print("   Escolha a forma de pagamento: \n");
+		                            System.out.print("-----------------------------------------------\n");
+		                            System.out.print("      OPÇÕES DE PAGAMENTO:\n");
+		                            System.out.print(" __________________________________\n");
+		                            System.out.print("|1) Á Vista Com 10% Desconto       |\n");
+		                            System.out.print("|__________________________________|\n");
+		                            System.out.print("|2) No cartão com 10% de acrescimo |\n");
+		                            System.out.print("|__________________________________|\n");
+		                            System.out.print("|3) Em duas vezes com 15% de taxa  |\n");
+		                            System.out.print("|__________________________________|\n");
+		                            formaDePagamento = leia.nextInt();
 
-                                    // 10.e) de acordo com a forma de pagamento, calcular o totalAPagar
-                                    totalAPagar = totalDaCompra + impostoDaCompra;
-
-                                    if (formaDePagamento == 1)
-                                    {
-                                        totalAPagar -= totalAPagar * 0.10; // calculo do desconto
-                                        escolhendoFormaDePagamento = false;
-                                    }
-                                    else if(formaDePagamento == 2)
-                                    {
-                                        totalAPagar += totalAPagar * 0.10; // calcule o acréscimo
-                                        escolhendoFormaDePagamento = false;
-                                    }
-                                    else if(formaDePagamento == 3)
-                                    {
-                                        totalAPagar += totalAPagar * 0.15; // parcelas
-                                        parcelasIguais = (totalAPagar / 2);
-                                        escolhendoFormaDePagamento = false;
-                                    }
-                                    else
-                                    {
-                                        System.out.print ("Essa não é uma forma de pagamento válida!");
-                                        escolhendoFormaDePagamento = true;
-                                    }
-                                }while(escolhendoFormaDePagamento == true);
+		                            // 10.e) de acordo com a forma de pagamento, calcular o totalAPagar
+		                            totalAPagar = totalDaCompra + impostoDaCompra;
+		                            
+		                            if (formaDePagamento == 1)
+		                            {
+		                                totalAPagar -= totalAPagar * 0.10; // calculo do desconto
+		                                escolhendoFormaDePagamento = false;
+		                            }
+		                            else if(formaDePagamento == 2)
+		                            {
+		                                totalAPagar += totalAPagar * 0.10; // calcule o acréscimo
+		                                escolhendoFormaDePagamento = false;
+		                            }
+		                            else if(formaDePagamento == 3)
+		                            {
+		                                totalAPagar += totalAPagar * 0.15; // parcelas
+		                                parcelasIguais = (totalAPagar / 2);
+		                                escolhendoFormaDePagamento = false;
+		                            }
+		                            else
+		                            {
+		                                System.out.print ("Essa não é uma forma de pagamento válida!");
+		                                escolhendoFormaDePagamento = true;
+		                            }
+		                        }while(escolhendoFormaDePagamento == true);
 
 								// 11) mostrar os parabens pela comprar, exibir a nota fiscal, e perguntar se ele quer continuar a compra(
 
-	                            limpa();
-	                            System.out.print("GENELETRON\n");
-	                            System.out.print("-----------------------------------------------\n");
-	                            System.out.print("Gerando economia e qualidade pro seu dia a dia!\n\n");
-	                            System.out.print("Nome do cliente: ");
-	                            nomeCliente = leia.next();
+		                        limpa();
+		                        System.out.print("GENELETRON\n");
+		                        System.out.print("-----------------------------------------------\n");
+		                        System.out.print("Gerando economia e qualidade pro seu dia a dia!\n\n");
+		                        System.out.print("Nome do cliente: ");
+		                        nomeCliente = leia.next();
 
-	                            limpa();
-	                            System.out.print("GENELETRON\n");
-	                            System.out.print("-----------------------------------------------\n");
-	                            System.out.print("Gerando economia e qualidade pro seu dia a dia!\n\n");
-	                            int apresentarCarrinho;  
+		                        limpa();
+		                        System.out.print("GENELETRON\n");
+		                        System.out.print("-----------------------------------------------\n");
+		                        System.out.print("Gerando economia e qualidade pro seu dia a dia!\n\n");
+		                        int apresentarCarrinho;  
 
-	                            System.out.print("\n\tParabéns pela sua compra " +nomeCliente+ "!!!!!\n\n");
-	                            //NOTA FISCAL
-	                            System.out.print("\nResumo da sua compra.\n");
-	                            System.out.print("_______________________________________________________________________\n");
-	                            System.out.print("\t\t+++ GENELETRON +++\n");
-	                            System.out.print("Avenida Paulista,908\t\tFone:(11)234-5678\n");
-	                            System.out.print("CNPJ 00.000.000/000.00\n");
-	                            System.out.print("=======================================================================\n");
-	                            System.out.print("Nome do cliente: " +nomeCliente+ "\n");
-	                            System.out.print("\nCOD.\t\tPRODUTO\t\t\tVL.TOTAL\t\tQTD.\n");
-	                            for (int linha = 0; linha<10; linha++)
+		                        System.out.print("\n\tParabéns pela sua compra " +nomeCliente+ "!!!!!\n\n");
+		                        //NOTA FISCAL
+		                        System.out.print("\nResumo da sua compra.\n");
+		                        System.out.print("_______________________________________________________________________\n");
+		                        System.out.print("\t\t+++ GENELETRON +++\n");
+		                        System.out.print("Avenida Paulista,908\t\tFone:(11)234-5678\n");
+		                        System.out.print("CNPJ 00.000.000/000.00\n");
+		                        System.out.print("=======================================================================\n");
+		                        System.out.print("Nome do cliente: " +nomeCliente+ "\n");
+		                        System.out.print("\nCOD.\t\tPRODUTO\t\t\tVL.TOTAL\t\tQTD.\n");
+		                        for (int linha = 0; linha<10; linha++)
 								{
 									if(carrinho[linha] > 0) 
 									{
@@ -385,76 +388,58 @@ public class principal {
 										System.out.print("\n") ;
 									}
 								}
-	                           	                           
-	                            System.out.printf("\n\nTotal. . . . . . . . . . . . . . . . . . . . . . . . . . R$ %.3f",totalDaCompra);
-	                            System.out.print("\n_____________________________________________________________________\n");                           
-	                            
-	                            String formasDePagamento[] = {"À VISTA","CARTÃO","PARCELADO EM 2x"};
-<<<<<<< HEAD
-	                            System.out.print("\tForma de pagamento: " + formasDePagamento[formaDePagamento - 1] + "\n");    
-	                            System.out.print("\tValor total da compra: R$ " + totalAPagar + "\n");
-	                            if (formaDePagamento == 3){
-	                            System.out.print("\tPARCELA #1: R$ " + parcelasIguais + "\n");
-	                            System.out.print("\tPARCELA #2: R$ " + parcelasIguais + "\n");
+		                       	                           
+		                        System.out.printf("\n\nTotal. . . . . . . . . . . . . . . . . . . . . . . . . . R$ %.3f",totalDaCompra);
+		                        System.out.print("\n_____________________________________________________________________\n");                           
+		                        
+		                        String formasDePagamento[] = {"À VISTA","CARTÃO","PARCELADO EM 2x"};
 
-	                            }
-	                            System.out.printf("\tImposto total (9): R$ %.2f " ,impostoDaCompra);
-	                            System.out.print("\n\t__________________________");
-	                            System.out.print("\n\tFone: (11)5555-5678     \n");
-	                            System.out.print("\tRua: Avenida do Git, 73   \n");
-	                            System.out.print("\tCNPJ 90.876.123/6543.90   \n");
-	                            System.out.print("\t__________________________");
-	                            System.out.print("\t\n\n");                        
-=======
-
-	                           System.out.print("Forma de pagamento: " + formasDePagamento[formaDePagamento - 1] + "\n");   
-	                           if (formaDePagamento == 3){
+		                       System.out.print("Forma de pagamento: " + formasDePagamento[formaDePagamento - 1] + "\n");   
+		                       if (formaDePagamento == 3){
 		                            System.out.printf("\nPARCELA #1: R$ %.3f",parcelasIguais);
 		                            System.out.printf("\nPARCELA #2: R$ %.3f",parcelasIguais);
 		                            }	
-	                           System.out.printf("\nImposto : . . . . . . . . . . . . . . . . . .  . . . . . . . R$ %.3f",impostoDaCompra,"\n");
-	                            System.out.printf("\nValor total da compra: . . . . . . . . . . . . . . . . . . . R$ %.3f",totalAPagar,"\n");	                                                     
-	                            System.out.print("\n======================================================================\n");		                            
+		                       System.out.printf("\nImposto : . . . . . . . . . . . . . . . . . .  . . . . . . . R$ %.3f",impostoDaCompra,"\n");
+		                        System.out.printf("\nValor total da compra: . . . . . . . . . . . . . . . . . . . R$ %.3f",totalAPagar,"\n");	                                                     
+		                        System.out.print("\n======================================================================\n");		                            
 
->>>>>>> 2dc56b185f8301fc91f37c4ebe007b7345793b0d
-	                            resetarCompra += 1;
-	                            finalizarPrograma = true;	                }
-	                else if(continuarComprandoV == 's' || continuarComprandoV == 'S')	                {
-	                        updateCarrinho=0;
-	                         continuarCompra=true;
-	                         resetarCompra += 1;
-	                         if(finalizarPrograma == true){
-	                             // zerar carrinho
-	                            for(int i = 0; i < 10; i++)
-	                            {
-	                                carrinho[i] = 0;
-	                            }
+		                        resetarCompra += 1;
+		                        finalizarPrograma = true;	                }
+		            else if(continuarComprandoV == 's' || continuarComprandoV == 'S')	                {
+		                    updateCarrinho=0;
+		                     continuarCompra=true;
+		                     resetarCompra += 1;
+		                     if(finalizarPrograma == true){
+		                         // zerar carrinho
+		                        for(int i = 0; i < 10; i++)
+		                        {
+		                            carrinho[i] = 0;
+		                        }
 
-	                            finalizarPrograma = false;
-	                         }
-	                }
-	                else {
-	                    System.out.print ("Opção Inválida, por favor digite ou S/N !\n\n");    
-	                }
-	        // FIM FAÇA ENTÃO MOSTRAR PROGRAMA
-	        }while(continuarCompra==true);
+		                        finalizarPrograma = false;
+		                     }
+		            }
+		            else {
+		                System.out.print ("Opção Inválida, por favor digite ou S/N !\n\n");    
+		            }
+		    // FIM FAÇA ENTÃO MOSTRAR PROGRAMA
+		    }while(continuarCompra==true);
 
-	    }
-	   else if (Character.toString(comprando).toLowerCase().equals("n")){
-	        System.out.print("ATÉ BREVE!!!!\n");
-	   }
-	   else{
-	       System.out.print("Opção inválida!!!");
 		}
-
-	}
-	
-	public static void limpa()
-	{
-		for (int i = 0; i < 15;i++)
-		{
-		//	System.out.println();
+		else if (Character.toString(comprando).toLowerCase().equals("n")){
+				    System.out.print("ATÉ BREVE!!!!\n");
+				}
+				else{
+				   System.out.print("Opção inválida!!!");
+				}
+				
+				}
+				
+				public static void limpa()
+				{
+				for (int i = 0; i < 15;i++)
+				{
+				//	System.out.println();
+				}
+			}
 		}
-	}
-}
-
