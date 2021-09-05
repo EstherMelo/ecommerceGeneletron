@@ -313,10 +313,10 @@ public class principal {
 
                                     System.out.print("Total da compra: R$ " + totalDaCompra +"\n");
                                     System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f \n\n", impostoDaCompra);
-<<<<<<< HEAD
-=======
+
+
                                     System.out.print("-----------------------------------------------\n");
->>>>>>> 2dc56b185f8301fc91f37c4ebe007b7345793b0d
+
 
                                     // 10.d) exibir as formas e mostrar forma de pagamento
                                     System.out.print("Escolha a forma de pagamento: \n");
@@ -390,33 +390,17 @@ public class principal {
 	                            System.out.print("\n_____________________________________________________________________\n");                           
 	                            
 	                            String formasDePagamento[] = {"À VISTA","CARTÃO","PARCELADO EM 2x"};
-<<<<<<< HEAD
-	                            System.out.print("\tForma de pagamento: " + formasDePagamento[formaDePagamento - 1] + "\n");    
-	                            System.out.print("\tValor total da compra: R$ " + totalAPagar + "\n");
+
+	                            System.out.print("Forma de pagamento: " + formasDePagamento[formaDePagamento - 1] + "\n");	                    
 	                            if (formaDePagamento == 3){
-	                            System.out.print("\tPARCELA #1: R$ " + parcelasIguais + "\n");
-	                            System.out.print("\tPARCELA #2: R$ " + parcelasIguais + "\n");
-
-	                            }
-	                            System.out.printf("\tImposto total (9): R$ %.2f " ,impostoDaCompra);
-	                            System.out.print("\n\t__________________________");
-	                            System.out.print("\n\tFone: (11)5555-5678     \n");
-	                            System.out.print("\tRua: Avenida do Git, 73   \n");
-	                            System.out.print("\tCNPJ 90.876.123/6543.90   \n");
-	                            System.out.print("\t__________________________");
-	                            System.out.print("\t\n\n");                        
-=======
-
-	                           System.out.print("Forma de pagamento: " + formasDePagamento[formaDePagamento - 1] + "\n");   
-	                           if (formaDePagamento == 3){
-		                            System.out.printf("\nPARCELA #1: R$ %.3f",parcelasIguais);
+	                            	System.out.printf("\nPARCELA #1: R$ %.3f",parcelasIguais);
 		                            System.out.printf("\nPARCELA #2: R$ %.3f",parcelasIguais);
-		                            }	
+	                            }	                            	
 	                           System.out.printf("\nImposto : . . . . . . . . . . . . . . . . . .  . . . . . . . R$ %.3f",impostoDaCompra,"\n");
 	                            System.out.printf("\nValor total da compra: . . . . . . . . . . . . . . . . . . . R$ %.3f",totalAPagar,"\n");	                                                     
 	                            System.out.print("\n======================================================================\n");		                            
 
->>>>>>> 2dc56b185f8301fc91f37c4ebe007b7345793b0d
+
 	                            resetarCompra += 1;
 	                            finalizarPrograma = true;	                }
 	                else if(continuarComprandoV == 's' || continuarComprandoV == 'S')	                {
