@@ -108,7 +108,7 @@ public class principal {
 				
 				
 		
-				comprando = leia.next().charAt(0);
+comprando = leia.next().charAt(0);
 				
 				if (Character.toString(comprando).toLowerCase().equals("s"))
 				{					
@@ -301,7 +301,7 @@ public class principal {
 
                                 do {
                                     //limpa();
-                                    System.out.print("GENELETRON\n");
+                                    System.out.print("               GENELETRON\n");
                                     System.out.print("-----------------------------------------------\n");
                                     System.out.print("Gerando economia e qualidade pro seu dia a dia!\n\n");
 
@@ -313,22 +313,32 @@ public class principal {
 
                                     System.out.print("Total da compra: R$ " + totalDaCompra +"\n");
                                     System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f \n\n", impostoDaCompra);
+<<<<<<< HEAD
 
 
                                     System.out.print("-----------------------------------------------\n");
 
+=======
+                                    System.out.print("-----------------------------------------------\n");
+>>>>>>> d8e8c6c808e9bf1969076850bf58e6c0e36e2dfd
 
                                     // 10.d) exibir as formas e mostrar forma de pagamento
-                                    System.out.print("Escolha a forma de pagamento: \n");
-                                    System.out.print("OPÇÕES DE PAGAMENTO:\n");
-                                    System.out.print("1) Á Vista Com 10% Desconto.\n");
-                                    System.out.print("2) No cartão com 10% de acrescimo.\n");
-                                    System.out.print("3) Em duas vezes com 15% de taxa.\n");
+                                    
+                                    System.out.print("   Escolha a forma de pagamento: \n");
+                                    System.out.print("-----------------------------------------------\n");
+                                    System.out.print("      OPÇÕES DE PAGAMENTO:\n");
+                                    System.out.print(" __________________________________\n");
+                                    System.out.print("|1) Á Vista Com 10% Desconto       |\n");
+                                    System.out.print("|__________________________________|\n");
+                                    System.out.print("|2) No cartão com 10% de acrescimo |\n");
+                                    System.out.print("|__________________________________|\n");
+                                    System.out.print("|3) Em duas vezes com 15% de taxa  |\n");
+                                    System.out.print("|__________________________________|\n");
                                     formaDePagamento = leia.nextInt();
 
                                     // 10.e) de acordo com a forma de pagamento, calcular o totalAPagar
                                     totalAPagar = totalDaCompra + impostoDaCompra;
-
+                                    
                                     if (formaDePagamento == 1)
                                     {
                                         totalAPagar -= totalAPagar * 0.10; // calculo do desconto
@@ -391,16 +401,25 @@ public class principal {
 	                            
 	                            String formasDePagamento[] = {"À VISTA","CARTÃO","PARCELADO EM 2x"};
 
+<<<<<<< HEAD
 	                            System.out.print("Forma de pagamento: " + formasDePagamento[formaDePagamento - 1] + "\n");	                    
 	                            if (formaDePagamento == 3){
 	                            	System.out.printf("\nPARCELA #1: R$ %.3f",parcelasIguais);
+=======
+	                           System.out.print("Forma de pagamento: " + formasDePagamento[formaDePagamento - 1] + "\n");   
+	                           if (formaDePagamento == 3){
+		                            System.out.printf("\nPARCELA #1: R$ %.3f",parcelasIguais);
+>>>>>>> d8e8c6c808e9bf1969076850bf58e6c0e36e2dfd
 		                            System.out.printf("\nPARCELA #2: R$ %.3f",parcelasIguais);
 	                            }	                            	
 	                           System.out.printf("\nImposto : . . . . . . . . . . . . . . . . . .  . . . . . . . R$ %.3f",impostoDaCompra,"\n");
 	                            System.out.printf("\nValor total da compra: . . . . . . . . . . . . . . . . . . . R$ %.3f",totalAPagar,"\n");	                                                     
 	                            System.out.print("\n======================================================================\n");		                            
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d8e8c6c808e9bf1969076850bf58e6c0e36e2dfd
 	                            resetarCompra += 1;
 	                            finalizarPrograma = true;	                }
 	                else if(continuarComprandoV == 's' || continuarComprandoV == 'S')	                {
