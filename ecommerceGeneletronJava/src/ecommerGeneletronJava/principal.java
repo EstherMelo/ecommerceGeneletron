@@ -9,7 +9,7 @@ public class principal {
 		// 0) config project
 		Locale.setDefault(Locale.US);
 
-// 1) vari�veis
+// 1) variáveis
 		Scanner leia = new Scanner(System.in);
 		String nomeCliente;
 		String produtos[][] = new String[10][4];
@@ -45,7 +45,7 @@ public class principal {
 		produtos[0][3] = "10";
 		
 		produtos[1][0] = "G1-2";
-		produtos[1][1] = "Smart TV LG 55�       ";
+		produtos[1][1] = "Smart TV LG 55´       ";
 		produtos[1][2] = "2.799   ";
 		produtos[1][3] = "10";
 	
@@ -70,7 +70,7 @@ public class principal {
 		produtos[5][3] = "10";
 		
 		produtos[6][0] = "G1-7";
-		produtos[6][1] = "Xbox S�ries S         ";
+		produtos[6][1] = "Xbox Séries S         ";
 		produtos[6][2] = "2.518   ";
 		produtos[6][3] = "10";
 		
@@ -91,17 +91,19 @@ public class principal {
 	
 	// 3) mostrar tela1_inicio
 		
-		System.out.print("**********************************************************************************************\n");
-		System.out.print("* @@@@@@@@  @@@@@@@  @@   @@  @@@@@@@  @@      @@@@@@@  @@@@@@@@  @@@@@@@  @@@@@@@@  @@   @@ *\n");
-		System.out.print("* @@        @@       @@@  @@  @@       @@      @@          @@     @@   @@  @@    @@  @@@  @@ *\n");
-		System.out.print("* @@  @@@@  @@@@@@   @@ @ @@  @@@@@@   @@      @@@@@@      @@     @@@@@@@  @@    @@  @@ @ @@ *\n");
-		System.out.print("* @@    @@  @@       @@  @@@  @@       @@      @@          @@     @@  @@   @@    @@  @@  @@@ *\n");
-		System.out.print("* @@@@@@@@  @@@@@@@  @@   @@  @@@@@@@  @@@@@@  @@@@@@@     @@     @@   @@  @@@@@@@@  @@   @@ *\n");
-		System.out.print("*                                                                                            *\n");
-		System.out.print("**********************************************************************************************\n");
+		
+		System.out.print("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n");
+		System.out.print("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n");
+		System.out.print("▓▓        ▓▓       ▓▓  ▓▓▓  ▓▓       ▓▓  ▓▓▓▓▓▓       ▓▓        ▓▓       ▓▓       ▓▓  ▓▓▓  ▓▓\n");
+		System.out.print("▓▓  ▓▓▓▓▓▓▓▓  ▓▓▓▓▓▓▓   ▓▓  ▓▓  ▓▓▓▓▓▓▓  ▓▓▓▓▓▓  ▓▓▓▓▓▓▓▓▓▓  ▓▓▓▓▓  ▓▓▓  ▓▓  ▓▓▓  ▓▓   ▓▓  ▓▓\n");
+		System.out.print("▓▓  ▓▓    ▓▓      ▓▓▓  ▓ ▓  ▓▓      ▓▓▓  ▓▓▓▓▓▓      ▓▓▓▓▓▓  ▓▓▓▓▓  ▓    ▓▓  ▓▓▓  ▓▓  ▓ ▓  ▓▓\n");
+		System.out.print("▓▓  ▓▓▓▓  ▓▓  ▓▓▓▓▓▓▓  ▓▓   ▓▓  ▓▓▓▓▓▓▓  ▓▓▓▓▓▓  ▓▓▓▓▓▓▓▓▓▓  ▓▓▓▓▓  ▓▓  ▓▓▓  ▓▓▓  ▓▓  ▓▓   ▓▓\n");
+		System.out.print("▓▓        ▓▓       ▓▓  ▓▓▓  ▓▓       ▓▓      ▓▓       ▓▓▓▓▓  ▓▓▓▓▓  ▓▓▓  ▓▓       ▓▓  ▓▓▓  ▓▓\n");
+		System.out.print("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n");
+		System.out.print("▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n");
 
 		System.out.print("\n             Loja Geneletron - Gerando economia e qualidade pro seu dia a dia!\n");
-		System.out.print("             #################################################################\n");
+		System.out.print("             ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");		
 		System.out.print("\t\t                      DESEJA FAZER COMPRAS? \n\t\t\t                      S/N: ");
 		
 		
@@ -166,7 +168,7 @@ public class principal {
 						}
 					}
 			     	System.out.print("\n");
-				// 6) Perguntando o c�digo
+				// 6) Perguntando o código
 				if (updateCarrinho == 0)
 				{
 						quantidadeValidada = false;
@@ -182,13 +184,13 @@ public class principal {
 						{
 								if(produtos[linha][0].equals(codigo.toUpperCase()))
 								{
-									// 7.1) Verifica se a quantidade no estoque � zero
+									// 7.1) Verifica se a quantidade no estoque é zero
 									if(Integer.parseInt(produtos[linha][3], 10) == 0)
 									{
-										System.out.print("Produto Indispon�vel do Estoque!");
+										System.out.print("Produto Indisponível do Estoque!");
 										break;										
 									}													
-									// 7.2) Mostra os dados do produto, depois de inserir o c�digo
+									// 7.2) Mostra os dados do produto, depois de inserir o código
 									System.out.print(produtos[linha][0]+"\t "+ produtos[linha][1]+"\t "+produtos[linha][2]+"\t "+produtos [linha][3]);
 									linhaDoCodigoInserido = linha;
 									perguntandoCodigo=false;
@@ -198,7 +200,7 @@ public class principal {
 					}
 					else
 					{
-						System.out.print("C�digo Inv�lido!");
+						System.out.print("Código Inválido!");
 						perguntandoCodigo = true;
 					}
 				//fecha o loop
@@ -223,7 +225,7 @@ public class principal {
 					c++;
 					if(caracterIncorreto > 0)
 					{
-						System.out.print("Escreva somente n�meros de 1 a 10!\n");
+						System.out.print("Escreva somente números de 1 a 10!\n");
 						quantidadeValidada = false;
 						perguntandoQuantidade = true;
 						break;
@@ -236,7 +238,7 @@ public class principal {
 				if(quantidadeValidada == true)
 				{
 					quantidade = Integer.parseInt(validarQuantidade, 10);
-					//validar caso n�o seja n�mero
+					//validar caso não seja número
 					int quantEstoque = Integer.parseInt(produtos[linhaDoCodigoInserido][3],10);
 					if(quantEstoque>=quantidade){
 						carrinho[linhaDoCodigoInserido]+=quantidade; // add qtd no carrinho
@@ -258,7 +260,7 @@ public class principal {
 				}// f. updateCarrinho
 		
 
-//9) Perguntar se ele continua ou n�o
+//9) Perguntar se ele continua ou não
 			System.out.print("Gostaria de continuar comprando (s ou n) ");
 			continuarComprandoV = leia.next().charAt(0);
 
@@ -266,7 +268,7 @@ public class principal {
                 {
                     if ((continuarComprandoV == 'n' || continuarComprandoV == 'N') && finalizarPrograma == true)
                     {
-                        System.out.print("AT� BREVE!!");
+                        System.out.print("ATÉ BREVE!!");
                         continuarCompra = false;
                         break;
                     }
@@ -294,7 +296,7 @@ public class principal {
                                 double valorDoProduto = Double.parseDouble(produtos[linha][2].replaceAll(",00","").replaceAll(",","."));
                                 //System.out.println(valorDoProduto);
                                 totalDaCompra += valorDoProduto * carrinho[linha];                                 
-                                // calcula a quantidade de cada produto vezes o pre�o
+                                // calcula a quantidade de cada produto vezes o preço
                                 // .replaceAll(".","").replaceAll(",00","").replaceAll(",",".")
                             }
                         }
@@ -321,15 +323,15 @@ public class principal {
                             
                             System.out.print("   Escolha a forma de pagamento: \n");
                             System.out.print("-----------------------------------------------\n");
-                            System.out.print("      OP��ES DE PAGAMENTO:\n");
+                            System.out.print("      OPÇÕES DE PAGAMENTO:\n");
                             System.out.print(" __________________________________\n");
-                            System.out.print("|1) � Vista Com 10% Desconto       |\n");
+                            System.out.print("|1) Á Vista Com 10% Desconto       |\n");
                             System.out.print("|__________________________________|\n");
-                            System.out.print("|2) No cart�o com 10% de acrescimo |\n");
+                            System.out.print("|2) No cartão com 10% de acrescimo |\n");
                             System.out.print("|__________________________________|\n");
                             System.out.print("|3) Em duas vezes com 15% de taxa  |\n");
                             System.out.print("|__________________________________|\n");
-                            System.out.print("|Op��o: ");
+                            System.out.print("|Opção: ");
                             formaDePagamento = leia.nextInt();
 
                             // 10.e) de acordo com a forma de pagamento, calcular o totalAPagar
@@ -342,7 +344,7 @@ public class principal {
                             }
                             else if(formaDePagamento == 2)
                             {
-                                totalAPagar += totalAPagar * 0.10; // calcule o acr�scimo
+                                totalAPagar += totalAPagar * 0.10; // calcule o acréscimo
                                 escolhendoFormaDePagamento = false;
                             }
                             else if(formaDePagamento == 3)
@@ -353,7 +355,7 @@ public class principal {
                             }
                             else
                             {
-                                System.out.print ("Essa n�o � uma forma de pagamento v�lida!");
+                                System.out.print ("Essa não é uma forma de pagamento válida!");
                                 escolhendoFormaDePagamento = true;
                             }
                         }while(escolhendoFormaDePagamento == true);
@@ -377,7 +379,7 @@ public class principal {
                         System.out.print("Gerando economia e qualidade pro seu dia a dia!\n\n");
                         //int apresentarCarrinho;  
 
-                        System.out.println("\n\tParab�ns pela sua compra " +nomeDoCliente+ "!!!!!");
+                        System.out.println("\n\tParabéns pela sua compra " +nomeDoCliente+ "!!!!!");
                         //NOTA FISCAL
                         System.out.print("\nResumo da sua compra.\n");
                         System.out.print("_______________________________________________________________________\n");
@@ -399,7 +401,7 @@ public class principal {
                         System.out.printf("\n\nTotal. . . . . . . . . . . . . . . . . . . . . . . . . . R$ %.3f",totalDaCompra);
                         System.out.print("\n_____________________________________________________________________\n");                           
                         
-                        String formasDePagamento[] = {"� VISTA","CART�O","PARCELADO EM 2x"};
+                        String formasDePagamento[] = {"À VISTA","CARTÃO","PARCELADO EM 2x"};
 
                        System.out.print("Forma de pagamento: " + formasDePagamento[formaDePagamento - 1] + "\n");   
                        if (formaDePagamento == 3){
@@ -427,17 +429,17 @@ public class principal {
                      }
             }
 	            else {
-	                System.out.print ("Op��o Inv�lida, por favor digite ou S/N !\n\n");    
+	                System.out.print ("Opção Inválida, por favor digite ou S/N !\n\n");    
 	            }
-                	// FIM FA�A ENT�O MOSTRAR PROGRAMA
+                	// FIM FAÇA ENTÃO MOSTRAR PROGRAMA
 		     }while(continuarCompra==true);
 
 		}
 			else if (Character.toString(comprando).toLowerCase().equals("n")){
-				System.out.print("AT� BREVE!!!!\n");
+				System.out.print("ATÉ BREVE!!!!\n");
 			}
 			else{
-			   System.out.print("Op��o inv�lida!!!");
+			   System.out.print("Opção inválida!!!");
 			}
 
 			}
