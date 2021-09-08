@@ -307,11 +307,11 @@ public class principal {
 
                             // 10.c) mostrar os dois
 
-                            System.out.printf("Total da compra: R$  %.3f",totalDaCompra);
+                            System.out.printf("Total da compra: R$  %.3f \n",totalDaCompra);
                             System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f", impostoDaCompra,"\n\n");
 
 
-                            System.out.print("Total da compra: R$ " + totalDaCompra +"\n");
+                            System.out.print("\nTotal da compra: R$ " + totalDaCompra +"\n");
                             System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f \n\n", impostoDaCompra);
                             System.out.print("-----------------------------------------------\n");
 
@@ -327,6 +327,7 @@ public class principal {
                             System.out.print("|__________________________________|\n");
                             System.out.print("|3) Em duas vezes com 15% de taxa  |\n");
                             System.out.print("|__________________________________|\n");
+                            System.out.print("|Opção: ");
                             formaDePagamento = leia.nextInt();
 
                             // 10.e) de acordo com a forma de pagamento, calcular o totalAPagar
@@ -437,9 +438,9 @@ public class principal {
 			
 			public static void limpa()
 			{
-			for (int i = 0; i < 15;i++)
-			{
-			//	System.out.println();
+				for (int i = 0; i < 100;i++)
+				{
+					System.out.println();
+				}
 			}
-		}
 	}
