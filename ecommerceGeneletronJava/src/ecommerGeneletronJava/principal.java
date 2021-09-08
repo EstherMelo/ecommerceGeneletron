@@ -198,7 +198,8 @@ public class principal {
 					}
 					else
 					{
-						System.out.print("Código Inválido!");										
+						System.out.print("Código Inválido!");
+						perguntandoCodigo = true;
 					}
 				//fecha o loop
 				System.out.print("\n");
@@ -224,6 +225,7 @@ public class principal {
 					{
 						System.out.print("Escreva somente números de 1 a 10!\n");
 						quantidadeValidada = false;
+						perguntandoQuantidade = true;
 						break;
 					}
 				}
@@ -308,12 +310,12 @@ public class principal {
                             // 10.c) mostrar os dois
 
                             System.out.printf("Total da compra: R$  %.3f \n",totalDaCompra);
-                            System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f", impostoDaCompra,"\n\n");
+                            System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.3f", impostoDaCompra,"\n\n");
 
 
                             //System.out.print("\nTotal da compra: R$ " + totalDaCompra +"\n");
                             //System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f \n\n", impostoDaCompra);
-                            System.out.print("-----------------------------------------------\n");
+                            System.out.print("\n-----------------------------------------------\n");
 
                             // 10.d) exibir as formas e mostrar forma de pagamento
                             
@@ -363,15 +365,19 @@ public class principal {
                         System.out.print("-----------------------------------------------\n");
                         System.out.print("Gerando economia e qualidade pro seu dia a dia!\n\n");
                         System.out.print("Nome do cliente: ");
-                        nomeCliente = leia.next();
-
+                        
+                        String nomeDoCliente;
+                        leia.nextLine();;
+                        nomeDoCliente = leia.nextLine();
+                        	
+                        System.out.print(nomeDoCliente);
                         limpa();
                         System.out.print("GENELETRON\n");
                         System.out.print("-----------------------------------------------\n");
                         System.out.print("Gerando economia e qualidade pro seu dia a dia!\n\n");
-                        int apresentarCarrinho;  
+                        //int apresentarCarrinho;  
 
-                        System.out.print("\n\tParabéns pela sua compra " +nomeCliente+ "!!!!!\n\n");
+                        System.out.println("\n\tParabéns pela sua compra " +nomeDoCliente+ "!!!!!");
                         //NOTA FISCAL
                         System.out.print("\nResumo da sua compra.\n");
                         System.out.print("_______________________________________________________________________\n");
@@ -379,7 +385,7 @@ public class principal {
                         System.out.print("Avenida Paulista,908\t\tFone:(11)234-5678\n");
                         System.out.print("CNPJ 00.000.000/000.00\n");
                         System.out.print("=======================================================================\n");
-                        System.out.print("Nome do cliente: " +nomeCliente+ "\n");
+                        System.out.println("Nome do cliente: " + nomeDoCliente);
                         System.out.print("\nCOD.\t\tPRODUTO\t\t\tVL.TOTAL\t\tQTD.\n");
                         for (int linha = 0; linha<10; linha++)
 						{
