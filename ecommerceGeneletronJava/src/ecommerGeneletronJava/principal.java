@@ -311,8 +311,8 @@ public class principal {
                             System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f", impostoDaCompra,"\n\n");
 
 
-                            System.out.print("\nTotal da compra: R$ " + totalDaCompra +"\n");
-                            System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f \n\n", impostoDaCompra);
+                            //System.out.print("\nTotal da compra: R$ " + totalDaCompra +"\n");
+                            //System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f \n\n", impostoDaCompra);
                             System.out.print("-----------------------------------------------\n");
 
                             // 10.d) exibir as formas e mostrar forma de pagamento
