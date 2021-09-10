@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>ecommerceGeneletron</name>
+	<name>Ecommerce Geneletron Java POO</name>
 	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
-<<<<<<< HEAD
-	</buildSpec>
-	<natures>
-=======
 		<buildCommand>
 			<name>org.eclipse.jdt.core.javabuilder</name>
 			<arguments>
@@ -17,6 +13,5 @@
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
->>>>>>> 69dc7d954136474530d379e06eb1b1ea22c8a234
 	</natures>
 </projectDescription>
