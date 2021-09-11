@@ -136,6 +136,8 @@ public class principal {
 			     	System.out.print("GENELETRON\n");
 			     	System.out.print("-----------------------------------------------\n");
 			     	System.out.print("Gerando economia e qualidade pro seu dia a dia!\n\n");
+			     	
+			     	
 			     	System.out.print("COD	  PRODUTOS			  VALOR		 QUANT\n") ;
 			     	System.out.print("___________________________________________________________________\n")	;		     	
 			     	// 4) mostrar tela2_comprando
