@@ -6,6 +6,11 @@ import java.util.Scanner;
 import entities.Produto;
 
 public class TelaPrincipal {
+	// Telas
+	public static TelaFormaDePagamento formTelaFormaDePagamento = new TelaFormaDePagamento();
+	public static TelaNotaFiscal formTelaNotaFiscal = new TelaNotaFiscal();
+	public static TelaDadosDoCliente formTelaDadosDoCliente = new TelaDadosDoCliente();
+	
 	// global vars
 	public static String opsn;
 	public static int i;
@@ -14,7 +19,22 @@ public class TelaPrincipal {
 	public static ArrayList<Produto> carrinho;
 	public static ArrayList<Produto> produtos;
 	
-	// métodos úteis
+	public static boolean pedindoCodigo 		= true;
+	public static boolean comprando 			= true; 
+	public static boolean pedindoQuantidade 	= true;
+	public static boolean exiContinuarComprando = false;
+	public static boolean fecharALoja			= false;
+	
+	// mÃ©todos Ãºteis
+	public static void esperaUmPouco(int ms)
+	{
+	 	try {
+			Thread.sleep(ms);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	}
 	public static int exibirLista(ArrayList<Produto> l)
 	{
 		int qtdVisivel = 0;
@@ -45,7 +65,7 @@ public class TelaPrincipal {
 	}
 	public static String esseCodigoExiste(String c, ArrayList<Produto> l)
 	{		
-		for (int linha = 0; linha < 10; linha++)
+		for (int linha = 0; linha < l.size(); linha++)
 			if (l.get(linha).getCodProduto().toLowerCase().equals(c.toLowerCase()) && l.get(linha).getQtdEstoque() > 0)
 				return (Integer.toString(linha));
 		return (Integer.toString(-1));
@@ -59,18 +79,18 @@ public class TelaPrincipal {
 	}
 	public static void exibirContinuarComprando()
 	{
-		System.out.print("\n\n\n\t\t■■■■■■■■■■■■■■■■■■■■■\n");
+		System.out.print("\n\n\n\t\tâ– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– \n");
 		System.out.print("\t\t CONTINUAR COMPRANDO?\n\t\t\t S/N: ");
 		
 	}
-	public static int opContinuarComprandoDigitadaEValida(int turno) throws InterruptedException
+	public static int opContinuarComprandoDigitadaEValida(int turno)
 	{
 		String op;
 		op = leia.next();
 		if (!op.toLowerCase().equals("s") && !op.toLowerCase().equals("n"))
 		{
-			System.out.println("OPÇÃO INVÁLIDA!");
-			Thread.sleep(3000);	
+			System.out.println("OPÃ‡ÃƒO INVÃ�LIDA!");
+			esperaUmPouco(3000);	
 			return (-1);
 		}
 		else if(op.toLowerCase().equals("s"))
@@ -79,30 +99,34 @@ public class TelaPrincipal {
 		}
 		else if (op.toLowerCase().equals("n") && turno == 1 || turno == 3)
 		{
+			comprando = false;
+			pedindoCodigo = false;
+			pedindoQuantidade = false;
+			
+			limpa();
+			mostrarBanner();
 			System.out.println("ATÉ BREVE!");
 		}
 		return (2);
 	}
 	
 	
-	// coração do programa
+	// coraÃ§Ã£o do programa
 	public static void main(String[] args) throws InterruptedException {
 		// vars -> global
-		Locale.setDefault(Locale.US);
 		boolean rodando				= true;
 				
 		// vars -> controle de fluxo do programa
 		boolean pedindoOpValida		= true;
 		
-		boolean comprando 			= true; 
 		
-		boolean pedindoCodigo 		= true;
+		
 		String	codigoDigitado		= "0";
 		
-		boolean pedindoQuantidade 	= true;
+		
 		String	quantidadeDigitada	= "0";
 		
-		boolean exiContinuarComprando = false;
+	
 		
 		boolean pedindoFormaDePagamento = true;
 		String	formaDePagamentoInformada = "0";
@@ -118,12 +142,12 @@ public class TelaPrincipal {
 		carrinho = new ArrayList<Produto>();
 		produtos = new ArrayList<Produto>();
 		produtos.add(new Produto("G1-1", "Notebook Acer Gamer ", 4700, 10));
-		produtos.add(new Produto("G1-2", "Smart TV LG 55´	", 2799, 10));
+		produtos.add(new Produto("G1-2", "Smart TV LG 55Â´	", 2799, 10));
 		produtos.add(new Produto("G1-3", "Monitor 4k 32'	", 2500, 10));
 		produtos.add(new Produto("G1-4", "Smartphone Motorola", 1799, 10));
 		produtos.add(new Produto("G1-5", "Cadeira gamer Thunderx3", 1500, 10));
 		produtos.add(new Produto("G1-6", "Drone DGI	", 5300, 10));
-		produtos.add(new Produto("G1-7", "Xbox Séries S	", 2518, 10));
+		produtos.add(new Produto("G1-7", "Xbox SÃ©ries S	", 2518, 10));
 		produtos.add(new Produto("G1-8", "Apple watch series 3", 1500, 10));
 		produtos.add(new Produto("G1-9", "Playstation 4	", 2799, 10));
 		produtos.add(new Produto("G1-10", "Projetor 4k LG	", 7000, 10));
@@ -142,62 +166,73 @@ public class TelaPrincipal {
 		
 		
 		/* TELA PRINCIPAL */
-		while(comprando && rodando)
+		while(comprando)
 		{
-			mostrarBanner();		
+			mostrarBanner();
 			// 1) Mostrar Produtos
-			System.out.println("CÓDIGO\tNOME\t\t\t\tPREÇO\t\tNO ESTOQUE");
-			System.out.print("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+			System.out.println("CÃ“DIGO\tNOME\t\t\t\tPREÃ‡O\t\tNO ESTOQUE");
+			System.out.print("â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– \n");
 			if (exibirLista(produtos) == 0)
 			{
-				System.out.println("ATENÇÃO! NENHUM PRODUTO DISPONÍVEL NO ESTOQUE!");
-				Thread.sleep(5000);
-				
-				System.out.println("VOCÊ SERÁ REDIRECIONADO PARA ESCOLHER A FORMA DE PAGAMENTO!");
-				Thread.sleep(3000);
-				
+				System.out.println("\n\n");
 				limpa();
-				TelaFormaDePagamento tfpag11 = new TelaFormaDePagamento();
-				System.out.println("TESTANDOOOO!");
+				mostrarBanner();
+				System.out.println("ATENÇÃO! TODOS OS PRODUTOS FORAM COMPRADOS!");
+				esperaUmPouco(3000);
+				System.out.println("VOCÊ SERÁ REDIRECIONAD(A/O/E) PARA ESCOLHER A FORMA DE PAGAMENTO!");
+				esperaUmPouco(1500);
+				limpa();
+				fecharALoja = true;
+				formTelaFormaDePagamento.show();
 			}
 			
 			// 2) Mostrar Carrinho
-			System.out.println("\n\nCARRINHO:");
-			System.out.print("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
-			exibirLista(carrinho);
-		
-			System.out.println("\n\n");		
+			if (!fecharALoja)
+			{
+				System.out.println("\n\nCARRINHO:");
+				System.out.print("â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– \n");
+				exibirLista(carrinho);		
+				System.out.println("\n\n");		
+			}
 			
-			// 3) Perguntando o Código do Produto
+			// 3) Perguntando o CÃ³digo do Produto
 			boolean jaTaNoCarrinho = false;
 			int		indiceJaTaNoCarrinho = 0;
 			
 			while (pedindoCodigo) {
-				System.out.print("DIGITE O CÓDIGO DO PRODUTO: ");
+				System.out.print("DIGITE O CÃ“DIGO DO PRODUTO: ");
 				codigoDigitado = leia.next();
 				indiceProdutoDigitado = esseCodigoExiste(codigoDigitado, produtos);
 				i = Integer.parseInt(indiceProdutoDigitado);
 				if (indiceProdutoDigitado.equals("-1"))
 				{
-					System.out.println("CÓDIGO INVÁLIDO!\n");
+					System.out.println("CÃ“DIGO INVÃ�LIDO!\n");
 					pedindoCodigo = true;
 				}
 				else 
 				{
-					// verificar se o produto já está no carrinho
-					for (int linha = 0; linha < carrinho.size(); linha++)
+					// verificar se o produto jÃ¡ estÃ¡ no carrinho
+					if (carrinho.size() > 0)
 					{
-						if (carrinho.get(linha).getCodProduto().toLowerCase().equals(codigoDigitado.toLowerCase())) // se produto já está no carrinho
+						for (int linha = 0; linha < carrinho.size(); linha++)
 						{
-							jaTaNoCarrinho = true;
-							indiceJaTaNoCarrinho = linha;
-							pedindoCodigo = false;
-							break;
+							if (carrinho.get(linha).getCodProduto().toLowerCase().equals(codigoDigitado.toLowerCase())) // se produto jÃ¡ estÃ¡ no carrinho
+							{
+								jaTaNoCarrinho = true;
+								indiceJaTaNoCarrinho = linha;
+								pedindoCodigo = false;
+								break;
+							}
 						}
 					}
+					else
+					{
+						jaTaNoCarrinho = false;
+					}
+					
 					if (!jaTaNoCarrinho || carrinho.size() == 0)
 					{
-						// se o carrinho for vazio, ou se o produto que eu to tentando comprar não estiver
+						// se o carrinho for vazio, ou se o produto que eu to tentando comprar nÃ£o estiver
 						Produto newp = new Produto(produtos.get(i).getCodProduto(), produtos.get(i).getNomeProduto(), produtos.get(i).getPreco(), produtos.get(i).getQtdEstoque());
 						carrinho.add(newp);
 						carrinho.get(carrinho.size() - 1).seteCarrinho(true);
@@ -208,24 +243,29 @@ public class TelaPrincipal {
 			
 			// 4) Perguntando a Quantidade do Produto
 			while (pedindoQuantidade) {
-				System.out.print("DIGITE A QUANTIDADE QUE VOCÊ DESEJA: ");
+				System.out.print("DIGITE A QUANTIDADE QUE VOCÃŠ DESEJA: ");
 				quantidadeDigitada = leia.next();			
 				
 				if (!eUmNumero(quantidadeDigitada))
-					System.out.println("INFORME A QUANTIDADE UTILIZANDO APENAS NÚMEROS DE 1 A 9!");
+					System.out.println("INFORME A QUANTIDADE UTILIZANDO APENAS NÃšMEROS DE 1 A 9!");
 				else if (!produtos.get(i).temNoEstoque(Integer.parseInt(quantidadeDigitada)))
-					System.out.println("QUANTIDADE INVÁLIDA NO ESTOQUE!");
+					System.out.println("QUANTIDADE INVÃ�LIDA NO ESTOQUE!");
 				else
 				{
 					pedindoQuantidade = false;
 					
 					// 5) dar baixa no estoque && adicionar a quantidade vendida no carrinho no produto
 					produtos.get(i).darBaixar(Integer.parseInt(quantidadeDigitada));
-					carrinho.get((jaTaNoCarrinho ? indiceJaTaNoCarrinho : i)).addCarrinho(Integer.parseInt(quantidadeDigitada));
+					
+					i = Integer.parseInt(esseCodigoExiste(codigoDigitado, carrinho));
+					carrinho.get((jaTaNoCarrinho == true ? indiceJaTaNoCarrinho : i)).addCarrinho(Integer.parseInt(quantidadeDigitada));
 					
 					// 6) exibir mensagem de sucesso, esperar um pouquinho.. 								
 					System.out.println("PRODUTO ADICIONADO AO CARRINHO COM SUCESSO!");
-					Thread.sleep(1500);					
+					esperaUmPouco(1500);
+					
+					jaTaNoCarrinho = false;
+					indiceJaTaNoCarrinho = 0;
 				}
 			}		
 			
@@ -235,7 +275,7 @@ public class TelaPrincipal {
 				// 8) e mostrar o continuar comprando	
 				exibirContinuarComprando();
 				
-				// 9) se N vai para forma de pagamento, se S, recomeça as compras
+				// 9) se N vai para forma de pagamento, se S, recomeÃ§a as compras
 				do
 				{
 					int r = opContinuarComprandoDigitadaEValida(2);
@@ -249,13 +289,18 @@ public class TelaPrincipal {
 					else if (r == 2)
 					{
 						limpa();
-						TelaFormaDePagamento tfpag111 = new TelaFormaDePagamento();
+						formTelaFormaDePagamento.show(); 
 					}
 				}while(pedindoOpValida);
 			}
 			else 
 				exiContinuarComprando = true;
-		}
+		}		
+		
+		// 12) Loja Fechada
+		limpa();
+		mostrarBanner();
+		System.out.println("\nLOJA FECHADA DEVIDO AO ESGOTAMENTO DOS PRODUTOS!\n");
 		
 	}
 }

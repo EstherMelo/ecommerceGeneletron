@@ -14,16 +14,21 @@ public class TelaDadosDoCliente extends TelaFormaDePagamento {
 	private int endereco;
 	
 	
-	//construtor		
-	public TelaDadosDoCliente ()
-	{
-		mostrarBanner();		
-	    leia.nextLine();;
-	    nome = leia.nextLine();	    	
-	    System.out.print(nome);
-	    
-	    TelaNotaFiscal tnf1 = new TelaNotaFiscal();
+	
+	//construtor	
+    public TelaDadosDoCliente() 
+    {
+		super();	
 	}
+    // método
+    public void show()
+    {   
+		mostrarBanner();		
+	    leia.nextLine();
+	    System.out.print("Nome: ");
+	    this.nome = leia.nextLine();	    	
+	    formTelaNotaFiscal.show();
+    }
 	
 	//encapsulamento - getters and setters
 	public String getCpf() {

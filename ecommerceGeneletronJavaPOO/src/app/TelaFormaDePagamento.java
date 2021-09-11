@@ -10,13 +10,14 @@ public class TelaFormaDePagamento extends TelaPrincipal {
     	private double      totalAPagar;
     	private double   	parcelasIguais;
 	
+    	
     	public TelaFormaDePagamento()  
     	{
     		
-    		 //Thread.sleep(1500);
-    		 limpa();
-		     TelaDadosDoCliente tddc1 = new TelaDadosDoCliente();
-		        
+    	}
+    	
+    	public void show()
+    	{ 
 			 // 10) mostrar carinho de compra, total e imposto, e escolher a forma de pagamento 
 	
 	        totalDaCompra = 0.0;
@@ -33,9 +34,8 @@ public class TelaFormaDePagamento extends TelaPrincipal {
 	            if(carrinho.get(linha).getQtdEstoque() > 0)
 	            {
 	                double valorDoProduto = carrinho.get(linha).getPreco();
-	                System.out.println(valorDoProduto);
-	                totalDaCompra += valorDoProduto * carrinho.get(linha).getQtdEstoque();                                 
-	                //calcula a quantidade de cada produto vezes o preço
+	                totalDaCompra += valorDoProduto * carrinho.get(linha).getQtdEstoque();   //calcula a quantidade de cada produto vezes o preÃ§o                                 
+	              
 	            }
 	        }
 	        // 10.b) calcular importo
@@ -48,17 +48,17 @@ public class TelaFormaDePagamento extends TelaPrincipal {
 	            System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.3f", impostoDaCompra,"\n\n");
 	
 
-	            System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+	            System.out.println("â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– ");
 	            System.out.println("\tEscolha a forma de pagamento: \n");
-	            System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+	            System.out.println("â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– ");
 	            System.out.print(" __________________________________\n");
-	            System.out.print("|1) Á Vista Com 10% Desconto       |\n");
+	            System.out.print("|1) Ã� Vista Com 10% Desconto       |\n");
 	            System.out.print("|__________________________________|\n");
-	            System.out.print("|2) No cartão com 10% de acrescimo |\n");
+	            System.out.print("|2) No cartÃ£o com 10% de acrescimo |\n");
 	            System.out.print("|__________________________________|\n");
 	            System.out.print("|3) Em duas vezes com 15% de taxa  |\n");
 	            System.out.print("|__________________________________|\n");
-	            System.out.print("Opção: ");
+	            System.out.print("OpÃ§Ã£o: ");
 	            formaDePagamento = leia.nextInt();
 	           
 	
@@ -72,7 +72,7 @@ public class TelaFormaDePagamento extends TelaPrincipal {
 	            }
 	            else if(formaDePagamento == 2)
 	            {
-	                totalAPagar += totalAPagar * 0.10; // calcule o acréscimo
+	                totalAPagar += totalAPagar * 0.10; // calcule o acrÃ©scimo
 	                escolhendoFormaDePagamento = false;
 	            }
 	            else if(formaDePagamento == 3)
@@ -83,13 +83,14 @@ public class TelaFormaDePagamento extends TelaPrincipal {
 	            }
 	            else
 	            {
-	                System.out.print ("Essa não é uma forma de pagamento válida!");
+	                System.out.print ("Essa nÃ£o Ã© uma forma de pagamento vÃ¡lida!");
 	                escolhendoFormaDePagamento = true;
 	            }	            
 	            
 	        }while(escolhendoFormaDePagamento == true);
 	        
-	      
+	        formTelaDadosDoCliente.show();
+	        
     	}
 
 		public Boolean getEscolhendoFormaDePagamento() {
