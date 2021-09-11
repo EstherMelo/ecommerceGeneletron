@@ -43,22 +43,20 @@ public class TelaFormaDePagamento extends TelaPrincipal {
 	
 	        do {
 	            mostrarBanner();
-	
-	            System.out.printf("Total da compra: R$  %.3f \n",totalDaCompra);
-	            System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.3f", impostoDaCompra,"\n\n");
-	
-
-	            System.out.println("â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– ");
-	            System.out.println("\tEscolha a forma de pagamento: \n");
-	            System.out.println("â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– ");
-	            System.out.print(" __________________________________\n");
-	            System.out.print("|1) Ã� Vista Com 10% Desconto       |\n");
-	            System.out.print("|__________________________________|\n");
-	            System.out.print("|2) No cartÃ£o com 10% de acrescimo |\n");
-	            System.out.print("|__________________________________|\n");
-	            System.out.print("|3) Em duas vezes com 15% de taxa  |\n");
-	            System.out.print("|__________________________________|\n");
-	            System.out.print("OpÃ§Ã£o: ");
+	            System.out.print("---------------------------------------------------------\n");
+	            System.out.printf("Total da compra: R$  %.2f \n",totalDaCompra);
+	            System.out.printf("Valor do Imposto sobre a Compra (9): R$ %.2f", impostoDaCompra);	                            
+	            System.out.println("\nEscolha a forma de pagamento:");
+	            System.out.print("---------------------------------------------------------\n");
+	            System.out.print("               OPÇÕES DE PAGAMENTO:\n");
+	            System.out.print("        __________________________________\n");
+	            System.out.print("       |1) À vista com 10% de desconto    |\n");
+	            System.out.print("       |__________________________________|\n");
+	            System.out.print("       |2) No cartão com 10% de acréscimo |\n");
+	            System.out.print("       |__________________________________|\n");
+	            System.out.print("       |3) Em duas vezes com 15% de taxa  |\n");
+	            System.out.print("       |__________________________________|\n");
+	            System.out.print("Opção: ");
 	            formaDePagamento = leia.nextInt();
 	           
 	
@@ -83,7 +81,7 @@ public class TelaFormaDePagamento extends TelaPrincipal {
 	            }
 	            else
 	            {
-	                System.out.print ("Essa nÃ£o Ã© uma forma de pagamento vÃ¡lida!");
+	                System.out.print ("Essa não é uma forma de pagamento válida!");
 	                escolhendoFormaDePagamento = true;
 	            }	            
 	            

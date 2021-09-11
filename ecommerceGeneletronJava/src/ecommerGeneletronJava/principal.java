@@ -139,7 +139,6 @@ public class principal {
 			     	
 			     	
 			     	System.out.print("COD	  PRODUTOS			  VALOR		 QUANT\n") ;
-			     	System.out.print("___________________________________________________________________\n")	;		     	
 			     	// 4) mostrar tela2_comprando
 			     	int temProdutoNoEstoque;
 			     	

@@ -16,5 +16,6 @@ public class TelaInicial {
 		System.out.print("\n             Loja Geneletron - Gerando economia e qualidade pro seu dia a dia!\n");
 		System.out.print("             ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");		
 		System.out.print("\t\t                      DESEJA FAZER COMPRAS? \n\t\t\t                      S/N: ");
+		
 	}
 }
