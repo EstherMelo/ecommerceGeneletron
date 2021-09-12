@@ -300,9 +300,9 @@ public class TelaPrincipal {
 		}		
 		
 		// 12) Loja Fechada
-	/*	limpa();
+	limpa();
 		mostrarBanner();
-		System.out.println("\nLOJA FECHADA DEVIDO AO ESGOTAMENTO DOS PRODUTOS!\n");
-	*/	
+		System.out.print("\t\t LOJA FECHADA, VOLTE OUTRO DIA\n");
+		
 	}
 }
