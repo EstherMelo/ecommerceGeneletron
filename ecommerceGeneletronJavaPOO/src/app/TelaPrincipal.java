@@ -75,6 +75,15 @@ public class TelaPrincipal {
 					return (false);
 		return (true);
 	}
+	public static boolean eUmNumero(String qtdDigitada, int pagina)
+	{
+		for (int i = 0; i < qtdDigitada.length(); i++)
+		{
+			if (!Character.toString(qtdDigitada.charAt(0)).equals("1") && !Character.toString(qtdDigitada.charAt(0)).equals("2") && !Character.toString(qtdDigitada.charAt(0)).equals("3"))
+					return (false);
+		}
+		return (true);
+	}
 	public static void exibirContinuarComprando()
 	{
 		System.out.print("\n\n\n\t\t\n");
