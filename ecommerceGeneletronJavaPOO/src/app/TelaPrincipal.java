@@ -71,7 +71,7 @@ public class TelaPrincipal {
 	public static boolean eUmNumero(String qtdDigitada)
 	{
 		for (int i = 0; i < qtdDigitada.length(); i++)
-			if (!Character.isDigit(qtdDigitada.charAt(i)))
+			if (!Character.isDigit(qtdDigitada.charAt(i)) || Character.toString(qtdDigitada.charAt(0)).equals("0"))
 					return (false);
 		return (true);
 	}
@@ -87,7 +87,7 @@ public class TelaPrincipal {
 		op = leia.next();
 		if (!op.toLowerCase().equals("s") && !op.toLowerCase().equals("n"))
 		{
-			System.out.println("OPÇÃO INVÁLIDA!");
+			System.out.println("OPÇÃO INVÁLIDA!\n");
 			esperaUmPouco(3000);	
 			return (-1);
 		}
@@ -247,9 +247,9 @@ public class TelaPrincipal {
 				quantidadeDigitada = leia.next();			
 				
 				if (!eUmNumero(quantidadeDigitada))
-					System.out.println("INFORME A QUANTIDADE UTILIZANDO APENAS NÚMEROS DE 1 A 9!");
+					System.out.println("INFORME A QUANTIDADE UTILIZANDO APENAS NÚMEROS DE 1 A 9!\n");
 				else if (!produtos.get(i).temNoEstoque(Integer.parseInt(quantidadeDigitada)))
-					System.out.println("QUANTIDADE INVÁLIDA NO ESTOQUE!");
+					System.out.println("QUANTIDADE INVÁLIDA NO ESTOQUE!\n");
 				else
 				{
 					pedindoQuantidade = false;
@@ -261,7 +261,7 @@ public class TelaPrincipal {
 					carrinho.get((jaTaNoCarrinho == true ? indiceJaTaNoCarrinho : i)).addCarrinho(Integer.parseInt(quantidadeDigitada));
 					
 					// 6) exibir mensagem de sucesso, esperar um pouquinho.. 								
-					System.out.println("PRODUTO ADICIONADO AO CARRINHO COM SUCESSO!");
+					System.out.println("PRODUTO ADICIONADO AO CARRINHO COM SUCESSO!\n");
 					esperaUmPouco(1500);
 					
 					jaTaNoCarrinho = false;
