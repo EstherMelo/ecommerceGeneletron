@@ -3,6 +3,12 @@ package app;
 public class Limpador {
 	public static void limpa() 
 	{
+		for (int i = 0; i < 20; i++)
+		{
+			System.out.println("\n\n\n");
+		}
+		
+		/* TESTAR NA MAQUINA DO ARGEL
 		try
 		{
 		 if (System.getProperty("os.name").contains("Windows"))
@@ -13,5 +19,6 @@ public class Limpador {
 		{
 			System.out.println("Erro ao limpar!");
 		}
+		*/
 	}
 }

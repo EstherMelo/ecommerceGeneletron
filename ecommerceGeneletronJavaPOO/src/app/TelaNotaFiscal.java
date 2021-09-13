@@ -14,7 +14,7 @@ public class TelaNotaFiscal extends TelaDadosDoCliente {
     public void show()
     {
  	    mostrarBanner();
- 	    System.out.println("t\tPARABÉNS PELA SUA COMPRA, " + formTelaDadosDoCliente.getNome() + "!!!!!");
+ 	    System.out.println("\t\tPARABÉNS PELA SUA COMPRA, " + formTelaDadosDoCliente.getNome() + "!!!!!");
  	    //NOTA FISCAL
  	    System.out.print("\n\t\t\tGENELETRON \n");
  	    System.out.print("Avenida Paulista,908\t\tFone:(11)234-5678\n");
