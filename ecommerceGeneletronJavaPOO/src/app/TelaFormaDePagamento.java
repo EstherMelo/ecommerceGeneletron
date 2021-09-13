@@ -27,7 +27,7 @@ public class TelaFormaDePagamento extends TelaPrincipal {
 	        parcelasIguais = 0.0;
 	        formaDePagamento = 0;
 	        
-	        limpa();
+	        Limpador.limpa();
 	        // 10.a) calcular total da compra
 	        for(int linha = 0; linha < carrinho.size(); linha++)
 	        {

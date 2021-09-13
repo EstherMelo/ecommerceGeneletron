@@ -20,7 +20,7 @@ public class TelaDadosDoCliente extends TelaFormaDePagamento {
     {
 		super();	
 	}
-    // método
+    // mÃ©todo
     public void show()
     {   
 		mostrarBanner();		

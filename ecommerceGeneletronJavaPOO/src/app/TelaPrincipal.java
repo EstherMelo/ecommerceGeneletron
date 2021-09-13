@@ -1,15 +1,17 @@
 package app;
 
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 import entities.Produto;
 
 public class TelaPrincipal {
+	
 	// Telas
 	public static TelaFormaDePagamento formTelaFormaDePagamento = new TelaFormaDePagamento();
 	public static TelaNotaFiscal formTelaNotaFiscal = new TelaNotaFiscal();
 	public static TelaDadosDoCliente formTelaDadosDoCliente = new TelaDadosDoCliente();
+		
 	
 	// global vars
 	public static String opsn;
@@ -25,7 +27,7 @@ public class TelaPrincipal {
 	public static boolean exiContinuarComprando = false;
 	public static boolean fecharALoja			= false;
 	
-	// mÃ©todos Ãºteis
+	// métodos úteis
 	public static void esperaUmPouco(int ms)
 	{
 	 	try {
@@ -58,11 +60,7 @@ public class TelaPrincipal {
      	System.out.println("\tGerando economia e qualidade pro seu dia a dia!");
      	System.out.println("");
 	}
-	public static void limpa()
-	{
-		for (int x = 0; x < 30; x++)		
-			System.out.println("\n\n");		
-	}
+
 	public static String esseCodigoExiste(String c, ArrayList<Produto> l)
 	{		
 		for (int linha = 0; linha < l.size(); linha++)
@@ -103,7 +101,7 @@ public class TelaPrincipal {
 			pedindoCodigo = false;
 			pedindoQuantidade = false;
 			
-			limpa();
+			Limpador.limpa();
 			mostrarBanner();
 			System.out.println("\n\n        *******************ATÉ BREVE!******************");
 		}
@@ -111,8 +109,9 @@ public class TelaPrincipal {
 	}
 	
 	
-	// coraÃ§Ã£o do programa
+	// coração do programa
 	public static void main(String[] args) throws InterruptedException {
+		
 		// vars -> global
 		boolean rodando				= true;
 				
@@ -126,11 +125,8 @@ public class TelaPrincipal {
 		
 		String	quantidadeDigitada	= "0";
 		
-	
-		
 		boolean pedindoFormaDePagamento = true;
 		String	formaDePagamentoInformada = "0";
-		
 		boolean pedindoDadosDoCliente	= true;
 		
 		int i = 0;
@@ -156,10 +152,10 @@ public class TelaPrincipal {
 		
 		/* TELA INICIAL */
 		do {
-			TelaInicial ti1 = new TelaInicial();		
+			TelaInicial.show();	
 			if (opContinuarComprandoDigitadaEValida(1) != -1)
 				pedindoOpValida = false;
-			limpa();
+			Limpador.limpa();
 		}while(pedindoOpValida);
 		
 		
@@ -176,13 +172,13 @@ public class TelaPrincipal {
 			if (exibirLista(produtos) == 0)					
 			{
 				System.out.println("\n\n");				
-				limpa();
+				Limpador.limpa();
 				mostrarBanner();
 				System.out.println("ATENÇÃO! TODOS OS PRODUTOS FORAM COMPRADOS!");
 				esperaUmPouco(3000);
 				System.out.println("VOCÊ SERÁ REDIRECIONAD(A/O/E) PARA ESCOLHER A FORMA DE PAGAMENTO!");
 				esperaUmPouco(1500);
-				limpa();
+				Limpador.limpa();
 				fecharALoja = true;
 				formTelaFormaDePagamento.show();
 			}
@@ -197,7 +193,7 @@ public class TelaPrincipal {
 				System.out.println("\n\n");		
 			}
 			
-			// 3) Perguntando o CÃ³digo do Produto
+			// 3) Perguntando o Código do Produto
 			boolean jaTaNoCarrinho = false;
 			int		indiceJaTaNoCarrinho = 0;
 			
@@ -213,12 +209,12 @@ public class TelaPrincipal {
 				}
 				else 
 				{
-					// verificar se o produto jÃ¡ estÃ¡ no carrinho
+					// verificar se o produto já está no carrinho
 					if (carrinho.size() > 0)
 					{
 						for (int linha = 0; linha < carrinho.size(); linha++)
 						{
-							if (carrinho.get(linha).getCodProduto().toLowerCase().equals(codigoDigitado.toLowerCase())) // se produto jÃ¡ estÃ¡ no carrinho
+							if (carrinho.get(linha).getCodProduto().toLowerCase().equals(codigoDigitado.toLowerCase())) // se produto já está no carrinho
 							{
 								jaTaNoCarrinho = true;
 								indiceJaTaNoCarrinho = linha;
@@ -234,7 +230,7 @@ public class TelaPrincipal {
 					
 					if (!jaTaNoCarrinho || carrinho.size() == 0)
 					{
-						// se o carrinho for vazio, ou se o produto que eu to tentando comprar nÃ£o estiver
+						// se o carrinho for vazio, ou se o produto que eu to tentando comprar não estiver
 						Produto newp = new Produto(produtos.get(i).getCodProduto(), produtos.get(i).getNomeProduto(), produtos.get(i).getPreco(), produtos.get(i).getQtdEstoque());
 						carrinho.add(newp);
 						carrinho.get(carrinho.size() - 1).seteCarrinho(true);
@@ -277,20 +273,20 @@ public class TelaPrincipal {
 				// 8) e mostrar o continuar comprando	
 				exibirContinuarComprando();
 				
-				// 9) se N vai para forma de pagamento, se S, recomeÃ§a as compras
+				// 9) se N vai para forma de pagamento, se S, recomeça as compras
 				do
 				{
 					int r = opContinuarComprandoDigitadaEValida(2);
 					if (r == 1)
 					{
-						limpa();
+						Limpador.limpa();
 						pedindoCodigo = true;
 						pedindoQuantidade = true;
 						exiContinuarComprando = false;
 					}
 					else if (r == 2)
 					{
-						limpa();
+						Limpador.limpa();
 						formTelaFormaDePagamento.show(); 
 					}
 				}while(pedindoOpValida);
@@ -300,7 +296,7 @@ public class TelaPrincipal {
 		}		
 		
 		// 12) Loja Fechada
-	limpa();
+	Limpador.limpa();
 		mostrarBanner();
 		System.out.print("\t\t LOJA FECHADA, VOLTE OUTRO DIA\n");
 		
