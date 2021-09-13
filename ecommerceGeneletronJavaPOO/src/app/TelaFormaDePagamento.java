@@ -86,7 +86,7 @@ public class TelaFormaDePagamento extends TelaPrincipal {
 	            }	            
 	            
 	        }while(escolhendoFormaDePagamento == true);
-	        
+	        Limpador.limpa();
 	        formTelaDadosDoCliente.show();
 	        
     	}

@@ -14,9 +14,9 @@ public class TelaNotaFiscal extends TelaDadosDoCliente {
     public void show()
     {
  	    mostrarBanner();
- 	    System.out.println("\n\n\n\n\t\tPARABÉNS PELA SUA COMPRA, " + formTelaDadosDoCliente.getNome() + "!!!!!");
+ 	    System.out.println("t\tPARABÉNS PELA SUA COMPRA, " + formTelaDadosDoCliente.getNome() + "!!!!!");
  	    //NOTA FISCAL
- 	    System.out.print("\n\n\n\n\n\n\n\n\t\t\tGENELETRON \n");
+ 	    System.out.print("\n\t\t\tGENELETRON \n");
  	    System.out.print("Avenida Paulista,908\t\tFone:(11)234-5678\n");
  	    System.out.print("CNPJ 12.345.678/999.111\n");
  	    System.out.println("Nome do cliente: " + formTelaDadosDoCliente.getNome());
@@ -36,7 +36,7 @@ public class TelaNotaFiscal extends TelaDadosDoCliente {
  	        System.out.printf("\nPARCELA #2: R$ %.2f",formTelaFormaDePagamento.getParcelasIguais());
  	   }	
  	   System.out.printf("\nImposto : . . . . . . . . . . . . . . . . . .  . . . . . R$ %.2f",formTelaFormaDePagamento.getImpostoDaCompra(),"\n");
- 	    System.out.printf("\nValor total da compra: . . . . . . . . . . . . . . . . .R$ %.2f",formTelaFormaDePagamento.getTotalAPagar(),"\n");	                                                     
+ 	    System.out.printf("\nValor total da compra: . . . . . . . . . . . . . . . . . .R$ %.2f",formTelaFormaDePagamento.getTotalAPagar(),"\n");	                                                     
  	  System.out.println("\n\n");
     // esperar um pouco
  	esperaUmPouco(1000); 	
@@ -56,6 +56,7 @@ public class TelaNotaFiscal extends TelaDadosDoCliente {
  	 		pedindoQuantidade = true;
  	 		exiContinuarComprando = false;
  		}
+ 		Limpador.limpa();
  	}
  	
  	System.out.println("\n\n\n\n");

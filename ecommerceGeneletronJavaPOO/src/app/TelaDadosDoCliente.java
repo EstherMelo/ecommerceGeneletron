@@ -26,7 +26,8 @@ public class TelaDadosDoCliente extends TelaFormaDePagamento {
 		mostrarBanner();		
 	    leia.nextLine();
 	    System.out.print("Nome: ");
-	    this.nome = leia.nextLine();	    	
+	    this.nome = leia.nextLine();
+	    Limpador.limpa();
 	    formTelaNotaFiscal.show();
     }
 	

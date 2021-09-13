@@ -93,6 +93,7 @@ public class TelaPrincipal {
 		}
 		else if(op.toLowerCase().equals("s"))
 		{
+			Limpador.limpa();
 			return (1);
 		}
 		else if (op.toLowerCase().equals("n") && turno == 1 || turno == 3)
@@ -164,6 +165,7 @@ public class TelaPrincipal {
 		/* TELA PRINCIPAL */
 		while(comprando)
 		{
+			Limpador.limpa();
 			System.out.print("\n\n");
 			mostrarBanner();
 			// 1) Mostrar Produtos
