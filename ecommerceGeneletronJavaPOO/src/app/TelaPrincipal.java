@@ -71,17 +71,8 @@ public class TelaPrincipal {
 	public static boolean eUmNumero(String qtdDigitada)
 	{
 		for (int i = 0; i < qtdDigitada.length(); i++)
-			if (!Character.isDigit(qtdDigitada.charAt(i)) || Character.toString(qtdDigitada.charAt(0)).equals("0"))
+			if (!Character.isDigit(qtdDigitada.charAt(i)))
 					return (false);
-		return (true);
-	}
-	public static boolean eUmNumero(String qtdDigitada, int pagina)
-	{
-		for (int i = 0; i < qtdDigitada.length(); i++)
-		{
-			if (!Character.toString(qtdDigitada.charAt(0)).equals("1") && !Character.toString(qtdDigitada.charAt(0)).equals("2") && !Character.toString(qtdDigitada.charAt(0)).equals("3"))
-					return (false);
-		}
 		return (true);
 	}
 	public static void exibirContinuarComprando()
@@ -96,13 +87,12 @@ public class TelaPrincipal {
 		op = leia.next();
 		if (!op.toLowerCase().equals("s") && !op.toLowerCase().equals("n"))
 		{
-			System.out.println("OPÇÃO INVÁLIDA!\n");
+			System.out.println("OPÇÃO INVÁLIDA!");
 			esperaUmPouco(3000);	
 			return (-1);
 		}
 		else if(op.toLowerCase().equals("s"))
 		{
-			Limpador.limpa();
 			return (1);
 		}
 		else if (op.toLowerCase().equals("n") && turno == 1 || turno == 3)
@@ -174,12 +164,11 @@ public class TelaPrincipal {
 		/* TELA PRINCIPAL */
 		while(comprando)
 		{
-			Limpador.limpa();
 			System.out.print("\n\n");
 			mostrarBanner();
 			// 1) Mostrar Produtos
 			System.out.println("CÓDIGO\tPRODUTO\t\t\t\tPREÇO\t\tESTOQUE");
-			System.out.print("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+			System.out.print("▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍\n");
 			if (exibirLista(produtos) == 0)					
 			{
 				System.out.println("\n\n");				
@@ -197,7 +186,7 @@ public class TelaPrincipal {
 			// 2) Mostrar Carrinho
 			if (!fecharALoja)
 			{
-				System.out.print("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
+				System.out.print("▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍\n");
 				System.out.println("\nCARRINHO:");
 				
 				exibirLista(carrinho);		
@@ -256,9 +245,9 @@ public class TelaPrincipal {
 				quantidadeDigitada = leia.next();			
 				
 				if (!eUmNumero(quantidadeDigitada))
-					System.out.println("INFORME A QUANTIDADE UTILIZANDO APENAS NÚMEROS DE 1 A 9!\n");
+					System.out.println("INFORME A QUANTIDADE UTILIZANDO APENAS NÚMEROS DE 1 A 9!");
 				else if (!produtos.get(i).temNoEstoque(Integer.parseInt(quantidadeDigitada)))
-					System.out.println("QUANTIDADE INVÁLIDA NO ESTOQUE!\n");
+					System.out.println("QUANTIDADE INVÁLIDA NO ESTOQUE!");
 				else
 				{
 					pedindoQuantidade = false;
@@ -270,7 +259,7 @@ public class TelaPrincipal {
 					carrinho.get((jaTaNoCarrinho == true ? indiceJaTaNoCarrinho : i)).addCarrinho(Integer.parseInt(quantidadeDigitada));
 					
 					// 6) exibir mensagem de sucesso, esperar um pouquinho.. 								
-					System.out.println("PRODUTO ADICIONADO AO CARRINHO COM SUCESSO!\n");
+					System.out.println("PRODUTO ADICIONADO AO CARRINHO COM SUCESSO!");
 					esperaUmPouco(1500);
 					
 					jaTaNoCarrinho = false;
@@ -307,10 +296,9 @@ public class TelaPrincipal {
 		}		
 		
 		// 12) Loja Fechada
-	
-		Limpador.limpa();
+	Limpador.limpa();
 		mostrarBanner();
-		System.out.print("\t\t LOJA FECHADA, VOLTE SEMPRE\n");
+		System.out.print("\t\t LOJA FECHADA, VOLTE OUTRO DIA\n");
 		
 	}
 }

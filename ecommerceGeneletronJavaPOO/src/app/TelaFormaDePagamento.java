@@ -3,8 +3,8 @@ package app;
 public class TelaFormaDePagamento extends TelaPrincipal {
 	
 		private Boolean 	escolhendoFormaDePagamento;
-		private String 		formaDePagamento;
-		private int			iFormaDePagamento;
+		private int 		formaDePagamento;
+    	
 		private double    	totalDaCompra;
     	private double   	impostoDaCompra;    
     	private double      totalAPagar;
@@ -25,7 +25,7 @@ public class TelaFormaDePagamento extends TelaPrincipal {
 	        totalAPagar = 0.0;
 	        escolhendoFormaDePagamento = true;
 	        parcelasIguais = 0.0;
-	        formaDePagamento = "0";
+	        formaDePagamento = 0;
 	        
 	        Limpador.limpa();
 	        // 10.a) calcular total da compra
@@ -57,42 +57,36 @@ public class TelaFormaDePagamento extends TelaPrincipal {
 	            System.out.print("       |3) Em duas vezes com 15% de taxa  |\n");
 	            System.out.print("       |__________________________________|\n");
 	            System.out.print("Opção: ");
-	            formaDePagamento = leia.next();
-	            if (!eUmNumero(formaDePagamento, 2))
-	            {
-	            	
-	            	 System.out.print ("ESSA FORMA DE PAGAMENTO NÃO É VÁLIDA! POR FAVOR DIGITE 1,2 OU 3!");
-	            	 esperaUmPouco(2000);
-	            	 escolhendoFormaDePagamento = true;
-	            	 Limpador.limpa();
-	            }
-				else
-				{		
-						escolhendoFormaDePagamento = false;
-						iFormaDePagamento = Integer.parseInt(formaDePagamento);
-			            // 10.e) de acordo com a forma de pagamento, calcular o totalAPagar
-			            totalAPagar = totalDaCompra + impostoDaCompra;
-			            
-			            if (iFormaDePagamento == 1)
-			            {
-			                totalAPagar -= totalAPagar * 0.10; // calculo do desconto
-			                escolhendoFormaDePagamento = false;
-			            }
-			            else if(iFormaDePagamento == 2)
-			            {
-			                totalAPagar += totalAPagar * 0.10; // calcule o acrÃ©scimo
-			                escolhendoFormaDePagamento = false;
-			            }
-			            else if(iFormaDePagamento == 3)
-			            {
-			                totalAPagar += totalAPagar * 0.15; // parcelas
-			                parcelasIguais = (totalAPagar / 2);
-			                escolhendoFormaDePagamento = false;
-			            }            
+	            formaDePagamento = leia.nextInt();
+	           
+	
+	            // 10.e) de acordo com a forma de pagamento, calcular o totalAPagar
+	            totalAPagar = totalDaCompra + impostoDaCompra;
 	            
-				}
+	            if (formaDePagamento == 1)
+	            {
+	                totalAPagar -= totalAPagar * 0.10; // calculo do desconto
+	                escolhendoFormaDePagamento = false;
+	            }
+	            else if(formaDePagamento == 2)
+	            {
+	                totalAPagar += totalAPagar * 0.10; // calcule o acrÃ©scimo
+	                escolhendoFormaDePagamento = false;
+	            }
+	            else if(formaDePagamento == 3)
+	            {
+	                totalAPagar += totalAPagar * 0.15; // parcelas
+	                parcelasIguais = (totalAPagar / 2);
+	                escolhendoFormaDePagamento = false;
+	            }
+	            else
+	            {
+	                System.out.print ("Essa não é uma forma de pagamento válida!");
+	                escolhendoFormaDePagamento = true;
+	            }	            
+	            
 	        }while(escolhendoFormaDePagamento == true);
-	        Limpador.limpa();
+	        
 	        formTelaDadosDoCliente.show();
 	        
     	}
@@ -105,11 +99,11 @@ public class TelaFormaDePagamento extends TelaPrincipal {
 			this.escolhendoFormaDePagamento = escolhendoFormaDePagamento;
 		}
 
-		public String getFormaDePagamento() {
+		public int getFormaDePagamento() {
 			return formaDePagamento;
 		}
 
-		public void setFormaDePagamento(String formaDePagamento) {
+		public void setFormaDePagamento(int formaDePagamento) {
 			this.formaDePagamento = formaDePagamento;
 		}
 
@@ -144,15 +138,8 @@ public class TelaFormaDePagamento extends TelaPrincipal {
 		public void setParcelasIguais(double parcelasIguais) {
 			this.parcelasIguais = parcelasIguais;
 		}
-
-		public int getiFormaDePagamento() {
-			return iFormaDePagamento;
-		}
-
-		public void setiFormaDePagamento(int iFormaDePagamento) {
-			this.iFormaDePagamento = iFormaDePagamento;
-		}
     	
     	
 	
 }
+
