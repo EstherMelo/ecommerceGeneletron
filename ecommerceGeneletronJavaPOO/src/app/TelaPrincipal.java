@@ -298,7 +298,8 @@ public class TelaPrincipal {
 		}		
 		
 		// 12) Loja Fechada
-	Limpador.limpa();
+	
+		Limpador.limpa();
 		mostrarBanner();
 		System.out.print("\t\t LOJA FECHADA, VOLTE OUTRO DIA\n");
 		
